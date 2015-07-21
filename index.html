@@ -55,201 +55,21 @@
         </div>
       </nav>
 
-<div class="container">
-  <div id="content">
-    <div class="row">
-      <div class="col-md-3 col-md-push-9">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Overview</h3>
-          </div>
-          <div class="list-group">
-            <a class="list-group-item" href="/reference/">Introduction</a>
-            <a class="list-group-item" href="/reference/changelog/">Changelog</a>
-            <a class="list-group-item" href="/reference/requirements/">Requirements</a>
-            <a class="list-group-item" href="/reference/libraries/">Libraries</a>
-            <a class="list-group-item" href="/reference/authorization/">Authorization</a>
-            <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
-            <a class="list-group-item" href="/reference/enums/">Enumerables</a>
-          </div>
-          <div class="panel-heading">
-            <h3 class="panel-title">Endpoints</h3>
-          </div>
-          <div class="list-group">
-            <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
-            <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
-            <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
-            <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
-            <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
-            <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
-            <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
-            <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
-            <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
-            <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
-            <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
-            <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-            <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
-            <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
-            <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
-            <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
-            <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
-            <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
-            <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
-            <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
-            <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
-            <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
-          </div>
-          <div class="panel-heading">
-            <h3 class="panel-title">Deprecated APIs</h3>
-          </div>
-          <div class="list-group">
-            <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-9 col-md-pull-3">
-        <h2 id="api-reference">API Reference</h2>
-
-<ol id="markdown-toc">
-  <li><a href="#accessing-the-api" id="markdown-toc-accessing-the-api">Accessing the API</a></li>
-  <li><a href="#json" id="markdown-toc-json">JSON</a></li>
-  <li><a href="#example-curl-requests" id="markdown-toc-example-curl-requests">Example cURL requests</a></li>
-  <li><a href="#request-options" id="markdown-toc-request-options">Request Options</a></li>
-  <li><a href="#https" id="markdown-toc-https">HTTPS</a></li>
-  <li><a href="#rate-limiting" id="markdown-toc-rate-limiting">Rate limiting</a></li>
-</ol>
-
-<h3 id="accessing-the-api">Accessing the API</h3>
-
-<p>The BookingSync API can be accessed over HTTPS at
-<code>https://www.bookingsync.com/api/v3/</code>.</p>
-
-<h3 id="json">JSON</h3>
-
-<p>All data is sent and received as JSON.</p>
-
-<p>Regardless whether the response returns a single resource or a collection,
-the body is expected to be in the following format:</p>
-
-<pre><code class="language-json"><span class="p">{</span>
-  <span class="nt">"plural_resource_name"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">"id"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
-      <span class="nt">"attribute_name"</span><span class="p">:</span> <span class="s2">"attribute_value"</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre>
-
-<h3 id="example-curl-requests">Example cURL requests</h3>
-
-<p>GET:</p>
-
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' https://www.bookingsync.com/api/v3/rentals
-</code></pre>
-
-<p>POST:</p>
-
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --header 'Content-Type: application/vnd.api+json'
---data '{"rentals":[{"name":"Name"}]}' https://www.bookingsync.com/api/v3/rentals
-</code></pre>
-
-<p>PUT:</p>
-
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --header 'Content-Type: application/vnd.api+json'
---request PUT --data '{"rentals":[{"name":"New Name"}]}' https://www.bookingsync.com/api/v3/rentals/RENTAL_ID
-</code></pre>
-
-<p>DELETE:</p>
-
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --request DELETE
-https://www.bookingsync.com/api/v3/rentals/RENTAL_ID
-</code></pre>
-
-<h3 id="request-options">Request Options</h3>
-
-<h4 id="pagination">Pagination</h4>
-
-<p>Large collections are paginated, meaning the response will include only
-a subset of resources and links to other pages.</p>
-
-<p>The links are sent in the <code>Link</code> header, e.g.:</p>
-
-<pre><code>Link: &lt;https://www.bookingsync.com/api/v3/accounts?page=1&gt;; rel="first", &lt;https://www.bookingsync.com/api/v3/accounts?page=2&gt;; rel="next", &lt;https://www.bookingsync.com/api/v3/accounts?page=3&gt;; rel="last"
-X-Total-Pages: 3
-</code></pre>
-
-<p>The possible <code>rel</code> values are:</p>
-
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>next</td>
-      <td>Shows the URL of the immediate next page of results.</td>
-    </tr>
-    <tr>
-      <td>last</td>
-      <td>Shows the URL of the last page of results.</td>
-    </tr>
-    <tr>
-      <td>first</td>
-      <td>Shows the URL of the first page of results.</td>
-    </tr>
-    <tr>
-      <td>prev</td>
-      <td>Shows the URL of the immediate previous page of results.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="limiting-fields">Limiting Fields</h4>
-
-<p>For retrieving collection of large resources, it is sometimes useful to limit
-the attributes returned by the API. For example, if we wanted to get only the
-<code>id</code> and <code>business_name</code> fields of the Accounts, we could specify that in the
-request:</p>
-
-<pre><code>GET https://www.bookingsync.com/api/v3/accounts?fields=id,business_name
-</code></pre>
-
-<h4 id="sideloading-associations">Sideloading Associations</h4>
-
-<p>For lowering the number of requests, it is sometimes useful to sideload associations.
-For example, if we wanted to sideload availabilities of the Rentals, we could specify
-that in the request:</p>
-
-<pre><code>GET https://www.bookingsync.com/api/v3/rentals?include=availabilities
-</code></pre>
-
-<h3 id="https">HTTPS</h3>
-
-<p>Every request to the API must use HTTPS. When the API is accessed over HTTP,
-a <code>302</code> redirect will be returned with the correct HTTPS url.</p>
-
-<h3 id="rate-limiting">Rate limiting</h3>
-
-<p>Each application accessing the API has a limit of 1000 requests per hour.</p>
-
-<p>Rate limiting information will be returned in the headers:</p>
-
-<pre><code>X-RateLimit-Limit: 1000
-X-RateLimit-Remaining: 999
-X-RateLimit-Reset: 1395140400
-</code></pre>
-
-<p><code>X-RateLimit-Reset</code> is the UNIX time at which the next limit reset happens.</p>
-
-<p><em>Note</em>: Reaching the rate limit, will return an error message <code>API v3 rate limit exceeded.</code> with <code>429 Too Many Requests</code> status code.</p>
-
-      </div>
+<div class="jumbotron flex-1 flex-col">
+  <div class="container flex-1 flex-col">
+    <div class="flex-1">
+      <h1 class="text-center">
+        BookingSync
+        <i class="fa fa-heart fa-2x animated hinge heartbeat infinite"></i>
+        Developers
+      </h1>
     </div>
+    <p class="text-center">
+      <a href="/reference" class="btn btn-transparent btn-xl">Read the API Reference</a>
+    </p>
   </div>
 </div>
+
     </div>
   </body>
 </html>
