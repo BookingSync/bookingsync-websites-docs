@@ -33,6 +33,7 @@ body .navbar-brand {
 body .navbar-brand > img {
   height: 40px;
   display: inline-block;
+  background: red;
 }
 
 .navbar-brand span {
