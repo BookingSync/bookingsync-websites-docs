@@ -1,0 +1,671 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="/style.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <nav id="sidebar-left">
+      <ul class="nav">
+        <li><a href="#" class="sidebar-toggle"><i class="fa fa-close"></i></a></li>
+        <li class="active">
+          <a href="/reference/">API Reference</a>
+        </li>
+        <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+      </ul>
+    </nav>
+    <div class="page-wrapper flex-1 flex-col">
+      <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container flex-row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle visible-xs-block">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="flex-1 hidden-xs">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container">
+  <div id="content">
+    <div class="row">
+      <div class="col-md-3 col-md-push-9">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Overview</h3>
+          </div>
+          <div class="list-group">
+            <a class="list-group-item" href="/reference/">Introduction</a>
+            <a class="list-group-item" href="/reference/changelog/">Changelog</a>
+            <a class="list-group-item" href="/reference/requirements/">Requirements</a>
+            <a class="list-group-item" href="/reference/libraries/">Libraries</a>
+            <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+            <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
+            <a class="list-group-item active" href="/reference/enums/">Enumerables</a>
+          </div>
+          <div class="panel-heading">
+            <h3 class="panel-title">Endpoints</h3>
+          </div>
+          <div class="list-group">
+            <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
+            <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+            <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
+            <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+            <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+            <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+            <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+            <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+            <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
+            <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
+            <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
+            <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
+            <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+            <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+            <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+            <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+            <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+            <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+            <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
+            <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+            <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
+            <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+          </div>
+          <div class="panel-heading">
+            <h3 class="panel-title">Deprecated APIs</h3>
+          </div>
+          <div class="list-group">
+            <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-md-pull-3">
+        <h2 id="enumerables">Enumerables</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#account-statuses" id="markdown-toc-account-statuses">Account statuses</a></li>
+  <li><a href="#availability-map-statuses" id="markdown-toc-availability-map-statuses">Availability map statuses</a></li>
+  <li><a href="#booking-statuses" id="markdown-toc-booking-statuses">Booking statuses</a></li>
+  <li><a href="#currencies" id="markdown-toc-currencies">Currencies</a></li>
+  <li><a href="#formats" id="markdown-toc-formats">Formats</a></li>
+  <li><a href="#locales" id="markdown-toc-locales">Locales</a></li>
+  <li><a href="#payment-kinds" id="markdown-toc-payment-kinds">Payment kinds</a></li>
+  <li><a href="#photo-kinds" id="markdown-toc-photo-kinds">Photo kinds</a></li>
+  <li><a href="#rates-types" id="markdown-toc-rates-types">Rates types</a></li>
+  <li><a href="#rates-rules-types" id="markdown-toc-rates-rules-types">Rates Rules types</a></li>
+  <li><a href="#rental-types" id="markdown-toc-rental-types">Rental types</a></li>
+</ol>
+
+<h3 id="account-statuses">Account statuses</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>trial</td>
+      <td>Account currently in trial period</td>
+    </tr>
+    <tr>
+      <td>paying</td>
+      <td>Account active and paying</td>
+    </tr>
+    <tr>
+      <td>suspended</td>
+      <td>Suspended account, it might get active again if payment made</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="availability-map-statuses">Availability map statuses</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>Available</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Booked</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Tentative</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Unavailable</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="booking-statuses">Booking statuses</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Booked</td>
+      <td>A regular reservation</td>
+    </tr>
+    <tr>
+      <td>Tentative</td>
+      <td>Tentative, this is a hold for a certain length of time</td>
+    </tr>
+    <tr>
+      <td>Unavailable</td>
+      <td>Unavailable period, often used to mark closed seasons or maintenance</td>
+    </tr>
+    <tr>
+      <td>Locked</td>
+      <td>Booking is locked by an other application or user</td>
+    </tr>
+    <tr>
+      <td>Canceled</td>
+      <td>This booking have been canceled</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="currencies">Currencies</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Currency</th>
+      <th>Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A$</td>
+      <td>AUD</td>
+    </tr>
+    <tr>
+      <td>R$</td>
+      <td>BRL</td>
+    </tr>
+    <tr>
+      <td>C$</td>
+      <td>CAD</td>
+    </tr>
+    <tr>
+      <td>CHF</td>
+      <td>CHF</td>
+    </tr>
+    <tr>
+      <td>Kč</td>
+      <td>CZK</td>
+    </tr>
+    <tr>
+      <td>kr</td>
+      <td>DKK</td>
+    </tr>
+    <tr>
+      <td>€</td>
+      <td>EUR</td>
+    </tr>
+    <tr>
+      <td>£</td>
+      <td>GBP</td>
+    </tr>
+    <tr>
+      <td>NZ$</td>
+      <td>NZD</td>
+    </tr>
+    <tr>
+      <td>฿</td>
+      <td>THB</td>
+    </tr>
+    <tr>
+      <td>$</td>
+      <td>USD</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="formats">Formats</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>date</td>
+      <td>
+<a href="http://en.wikipedia.org/wiki/ISO_8601#Dates">ISO 8601</a> compatible <code>%Y-%m-%d</code> <code>2014-08-21</code>
+</td>
+    </tr>
+    <tr>
+      <td>decimal</td>
+      <td>Decimal value returned as a string. Big.js is recommended for Javascript users.</td>
+    </tr>
+    <tr>
+      <td>object</td>
+      <td>A Javascript Object.</td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td>
+<a href="http://en.wikipedia.org/wiki/ISO_8601#UTC">ISO 8601</a> compatible <code>%Y-%m-%dT%H:%M:%SZ</code> <code>2014-08-21T08:40:44Z</code>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Note</em>: Translation objects are having locales as string keys and translations as string values. <code>{"en": "Wonderful living room", "fr": "Merveilleux séjour"}</code></p>
+
+<h3 id="locales">Locales</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bg</td>
+      <td>Bulgarian</td>
+    </tr>
+    <tr>
+      <td>cs</td>
+      <td>Czech</td>
+    </tr>
+    <tr>
+      <td>da</td>
+      <td>Danish</td>
+    </tr>
+    <tr>
+      <td>de</td>
+      <td>German</td>
+    </tr>
+    <tr>
+      <td>el</td>
+      <td>Greek</td>
+    </tr>
+    <tr>
+      <td>en</td>
+      <td>English</td>
+    </tr>
+    <tr>
+      <td>es</td>
+      <td>Spanish</td>
+    </tr>
+    <tr>
+      <td>fi</td>
+      <td>Finish</td>
+    </tr>
+    <tr>
+      <td>fr</td>
+      <td>French</td>
+    </tr>
+    <tr>
+      <td>hu</td>
+      <td>Hungarian</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>Bahasa Indonesian</td>
+    </tr>
+    <tr>
+      <td>it</td>
+      <td>Italian</td>
+    </tr>
+    <tr>
+      <td>ja</td>
+      <td>Japanese</td>
+    </tr>
+    <tr>
+      <td>ko</td>
+      <td>Korean</td>
+    </tr>
+    <tr>
+      <td>lt</td>
+      <td>Lithuanian</td>
+    </tr>
+    <tr>
+      <td>lv</td>
+      <td>Latvian</td>
+    </tr>
+    <tr>
+      <td>mk</td>
+      <td>Macedonian</td>
+    </tr>
+    <tr>
+      <td>nb</td>
+      <td>Norvegian</td>
+    </tr>
+    <tr>
+      <td>nl</td>
+      <td>Dutch</td>
+    </tr>
+    <tr>
+      <td>pl</td>
+      <td>Polish</td>
+    </tr>
+    <tr>
+      <td>pt</td>
+      <td>Portuguese</td>
+    </tr>
+    <tr>
+      <td>ro</td>
+      <td>Romanian</td>
+    </tr>
+    <tr>
+      <td>rs</td>
+      <td>Serbian</td>
+    </tr>
+    <tr>
+      <td>ru</td>
+      <td>Russian</td>
+    </tr>
+    <tr>
+      <td>sk</td>
+      <td>Slovak</td>
+    </tr>
+    <tr>
+      <td>sv</td>
+      <td>Swedish</td>
+    </tr>
+    <tr>
+      <td>uk</td>
+      <td>Ukrainian</td>
+    </tr>
+    <tr>
+      <td>zh</td>
+      <td>Simplified Chinese</td>
+    </tr>
+    <tr>
+      <td>zh-TW</td>
+      <td>Traditional Chinese</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="payment-kinds">Payment kinds</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bookingsync</td>
+      <td>Payment made through BookingSync.</td>
+    </tr>
+    <tr>
+      <td>cash</td>
+      <td>Payment made by Cash.</td>
+    </tr>
+    <tr>
+      <td>cheque</td>
+      <td>Payment made by Cheque.</td>
+    </tr>
+    <tr>
+      <td>credits</td>
+      <td>Payment made using Credits. Credits are money you might have kept from your guest after a cancellation.</td>
+    </tr>
+    <tr>
+      <td>credit-card</td>
+      <td>Payment made by Credit Card.</td>
+    </tr>
+    <tr>
+      <td>online</td>
+      <td>Payment made Online, outside of BookingSync.</td>
+    </tr>
+    <tr>
+      <td>paypal</td>
+      <td>Payment made with PayPal, outside of BookingSync.</td>
+    </tr>
+    <tr>
+      <td>travel-cheque</td>
+      <td>Payment made by Travel Cheque.</td>
+    </tr>
+    <tr>
+      <td>wiretransfer</td>
+      <td>Payment made by Wire Transfer.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="photo-kinds">Photo kinds</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bathroom</td>
+      <td>Bathroom’s photo.</td>
+    </tr>
+    <tr>
+      <td>bedroom</td>
+      <td>Bedroom’s photo.</td>
+    </tr>
+    <tr>
+      <td>floor_plan</td>
+      <td>Floor plan</td>
+    </tr>
+    <tr>
+      <td>inside</td>
+      <td>Inside’s photo.</td>
+    </tr>
+    <tr>
+      <td>kitchen</td>
+      <td>Kitchen’s photo.</td>
+    </tr>
+    <tr>
+      <td>livingroom</td>
+      <td>Livingroom’s photo.</td>
+    </tr>
+    <tr>
+      <td>outside</td>
+      <td>Outside’s photo.</td>
+    </tr>
+    <tr>
+      <td>surroundings</td>
+      <td>Surroundings’s photo.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rates-types">Rates types</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nightly</td>
+      <td>The reference rate is nightly based.</td>
+    </tr>
+    <tr>
+      <td>weekly</td>
+      <td>The reference rate is weekly based.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rates-rules-types">Rates Rules types</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>arrival_only</td>
+      <td>Rule applied on arrival.</td>
+    </tr>
+    <tr>
+      <td>departure_only</td>
+      <td>Rule applied on departure.</td>
+    </tr>
+    <tr>
+      <td>early_booking</td>
+      <td>Rule applied on early booking.</td>
+    </tr>
+    <tr>
+      <td>full_period_only</td>
+      <td>Rule applied for full period.</td>
+    </tr>
+    <tr>
+      <td>late_booking</td>
+      <td>Rule applied for late booking.</td>
+    </tr>
+    <tr>
+      <td>prevent_if_booked_ahead_of</td>
+      <td>Rule applied if booked ahead.</td>
+    </tr>
+    <tr>
+      <td>stay_at_least</td>
+      <td>Rule applied for minimum stay.</td>
+    </tr>
+    <tr>
+      <td>strict_minimum_price_per_night</td>
+      <td>Rule applied for minimum price per night.</td>
+    </tr>
+    <tr>
+      <td>weekend_night</td>
+      <td>Rule applied for weekend night.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rental-types">Rental types</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>apartment</td>
+      <td>Apartment</td>
+    </tr>
+    <tr>
+      <td>boat</td>
+      <td>Boat</td>
+    </tr>
+    <tr>
+      <td>bungalow</td>
+      <td>Bungalow</td>
+    </tr>
+    <tr>
+      <td>cabin</td>
+      <td>Cabin</td>
+    </tr>
+    <tr>
+      <td>castle</td>
+      <td>Castle</td>
+    </tr>
+    <tr>
+      <td>chalet</td>
+      <td>Chalet</td>
+    </tr>
+    <tr>
+      <td>cottage</td>
+      <td>Cottage</td>
+    </tr>
+    <tr>
+      <td>farmhouse</td>
+      <td>Farmhouse</td>
+    </tr>
+    <tr>
+      <td>holiday-home</td>
+      <td>Holiday Home</td>
+    </tr>
+    <tr>
+      <td>house</td>
+      <td>House</td>
+    </tr>
+    <tr>
+      <td>private-room</td>
+      <td>Private room</td>
+    </tr>
+    <tr>
+      <td>studio</td>
+      <td>Studio</td>
+    </tr>
+    <tr>
+      <td>villa</td>
+      <td>Villa</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+
