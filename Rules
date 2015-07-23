@@ -19,6 +19,10 @@ end
 compile '/CNAME/' do
 end
 
+compile '/highlight/' do
+  filter :erb
+end
+
 compile '*' do
   filter :erb
   filter :kramdown, toc_levels: [2], header_offset: 1, enable_coderay: false
@@ -33,6 +37,10 @@ end
 route '/static/*' do
   # /static/foo.html/ → /foo.html
   item.identifier[7..-2]
+end
+
+route '/highlight' do
+  '/highlight.css'
 end
 
 route '*' do

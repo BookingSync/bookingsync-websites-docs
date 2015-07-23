@@ -1,0 +1,6 @@
+<%= Pygments.css(style: "tango") %>
+
+.err {
+  color: #ce5c00 !important;
+  border: none !important;
+}
