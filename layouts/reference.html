@@ -8,6 +8,29 @@
         class: "list-group-item") %>
     </div>
     <div class="panel-heading">
+      <h3 class="panel-title">Filters</h3>
+    </div>
+    <div class="list-group">
+      <%= link_to_with_current("Introduction", "/filters/",
+        class: "list-group-item") %>
+      <%= link_to_with_current("Array Filters", "/filters/array_filters/",
+        class: "list-group-item") %>
+      <%= link_to_with_current("HTML Filters", "/filters/html_filters/",
+        class: "list-group-item") %>
+      <%= link_to_with_current("Markdown Filters", "/filters/markdown_filters/",
+        class: "list-group-item") %>
+      <%= link_to_with_current("Math Filters", "/filters/math_filters/",
+        class: "list-group-item") %>
+      <%= link_to_with_current("Money Filters", "/filters/money_filters/",
+        class: "list-group-item") %>
+      <%= link_to_with_current("String Filters", "/filters/string_filters/",
+        class: "list-group-item") %>
+      <%= link_to_with_current("Text Filters", "/filters/text_filters/",
+        class: "list-group-item") %>
+      <%= link_to_with_current("Additional Filters", "/filters/additional_filters/",
+        class: "list-group-item") %>
+    </div>
+    <div class="panel-heading">
       <h3 class="panel-title">Tags</h3>
     </div>
     <div class="list-group">
