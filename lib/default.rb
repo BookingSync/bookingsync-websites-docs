@@ -3,5 +3,8 @@
 
 require 'pygments.rb'
 
+require_relative './link_to_with_current'
+
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::LinkTo
+include LinkToWithCurrent
