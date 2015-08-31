@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>BookingSync Websites Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/highlight.css">
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="/style.js"></script>
+
+  <!-- you don't need to keep this, but it's cool for stats! -->
+  <meta name="generator" content="nanoc 3.8.0">
+</head>
+
+  <body class="flex-col">
+    <nav id="sidebar-left">
+  <ul class="nav">
+    <li><a href="#" class="sidebar-toggle"><i class="fa fa-close"></i></a></li>
+    <li class="active">
+      <a href="/reference/">Websites Reference</a>
+    </li>
+    <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+  </ul>
+</nav>
+
+    <div class="page-wrapper flex-1 flex-col">
+      <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container flex-row">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle sidebar-toggle visible-xs-block">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/reference/">
+        <img alt="BookingSync" src="/images/bookingsync.svg">
+        <span class="flex-1">Websites Documentation</span>
+      </a>
+    </div>
+    <div class="flex-1 hidden-xs">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active">
+          <a href="/reference/">Websites Reference</a>
+        </li>
+        <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <div class="container">
+        <div id="content">
+          <div class="row">
+            <div class="col-md-3 col-md-push-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Basics</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/">Introduction</a>
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title">Filters</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/filters/">Introduction</a>
+      <a class="list-group-item" href="/reference/filters/array_filters/">Array Filters</a>
+      <a class="list-group-item" href="/reference/filters/html_filters/">HTML Filters</a>
+      <a class="list-group-item" href="/reference/filters/markdown_filters/">Markdown Filters</a>
+      <a class="list-group-item active" href="/reference/filters/math_filters/">Math Filters</a>
+      <a class="list-group-item" href="/reference/filters/money_filters/">Money Filters</a>
+      <a class="list-group-item" href="/reference/filters/string_filters/">String Filters</a>
+      <a class="list-group-item" href="/reference/filters/text_filters/">Text Filters</a>
+      <a class="list-group-item" href="/reference/filters/additional_filters/">Additional Filters</a>
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/tags/">Introduction</a>
+      <a class="list-group-item" href="/reference/tags/control_flow_tags/">Control Flow Tags</a>
+      <a class="list-group-item" href="/reference/tags/iteration_tags/">Iteration Tags</a>
+      <a class="list-group-item" href="/reference/tags/theme_tags/">Theme Tags</a>
+      <a class="list-group-item" href="/reference/tags/variable_tags/">Variable Tags</a>
+    </div>
+  </div>
+</div>
+
+            <div class="col-md-9 col-md-pull-3">
+              <h2 id="math-filters">Math Filters</h2>
+
+<p>Math filters allow you to apply mathematical tasks.</p>
+
+<p>Math filters can be linked and, as with any other filters, are applied in order from left to right. In the example below, <code>minus</code> is applied first, then <code>times</code>, and finally <code>divided_by</code>.</p>
+
+<pre><code class="language-liquid">You save <span class="p">{{</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">compare_at_price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">minus</span><span class="p">:</span><span class="w"> </span>rental.price<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">times</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">divided_by</span><span class="p">:</span><span class="w"> </span>rental.compare_at_price<span class="w"> </span><span class="p">}}</span><span class="nf">%</span><span class="w"></span></code></pre>
+
+<p><br></p>
+
+<ol id="markdown-toc">
+  <li><a href="#dividedby" id="markdown-toc-dividedby">divided_by</a></li>
+  <li><a href="#minus" id="markdown-toc-minus">minus</a></li>
+  <li><a href="#plus" id="markdown-toc-plus">plus</a></li>
+  <li><a href="#times" id="markdown-toc-times">times</a></li>
+  <li><a href="#modulo" id="markdown-toc-modulo">modulo</a></li>
+</ol>
+
+<h3 id="dividedby">divided_by</h3>
+
+<p>Divides an output by a number. The output is rounded to the nearest integer.</p>
+
+<h5 id="input">Input</h5>
+
+<pre><code class="language-liquid">  &lt;!-- rental.price = 200 --&gt;
+    <span class="p">{{</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">divided_by</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output">Output</h5>
+
+<pre><code>  20
+</code></pre>
+
+<h3 id="minus">minus</h3>
+
+<p>Subtracts a number from an output.</p>
+
+<h5 id="input-1">Input</h5>
+
+<pre><code class="language-liquid">  &lt;!-- rental.price = 200 --&gt;
+    <span class="p">{{</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">minus</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output-1">Output</h5>
+
+<pre><code>  185
+</code></pre>
+
+<h3 id="plus">plus</h3>
+
+<p>Adds a number to an output.</p>
+
+<h5 id="input-2">Input</h5>
+
+<pre><code class="language-liquid">  &lt;!-- rental.price = 200 --&gt;
+    <span class="p">{{</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">plus</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output-2">Output</h5>
+
+<pre><code>  215
+</code></pre>
+
+<h3 id="times">times</h3>
+
+<p>Multiplies an output by a number.</p>
+
+<h5 id="input-3">Input</h5>
+
+<pre><code class="language-liquid">  &lt;!-- rental.price = 200 --&gt;
+    <span class="p">{{</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">price</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">times</span><span class="p">:</span><span class="w"> </span><span class="mf">1.15</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output-3">Output</h5>
+
+<pre><code>  230
+</code></pre>
+
+<h3 id="modulo">modulo</h3>
+
+<p>Divides an output by a number and returns the remainder.</p>
+
+<h5 id="input-4">Input</h5>
+
+<pre><code class="language-liquid">  <span class="p">{{</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">modulo</span><span class="p">:</span><span class="mi">5</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output-4">Output</h5>
+
+<pre><code>  2
+</code></pre>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>BookingSync Websites Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/highlight.css">
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="/style.js"></script>
+
+  <!-- you don't need to keep this, but it's cool for stats! -->
+  <meta name="generator" content="nanoc 3.8.0">
+</head>
+
+  <body class="flex-col">
+    <nav id="sidebar-left">
+  <ul class="nav">
+    <li><a href="#" class="sidebar-toggle"><i class="fa fa-close"></i></a></li>
+    <li class="active">
+      <a href="/reference/">Websites Reference</a>
+    </li>
+    <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+  </ul>
+</nav>
+
+    <div class="page-wrapper flex-1 flex-col">
+      <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container flex-row">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle sidebar-toggle visible-xs-block">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/reference/">
+        <img alt="BookingSync" src="/images/bookingsync.svg">
+        <span class="flex-1">Websites Documentation</span>
+      </a>
+    </div>
+    <div class="flex-1 hidden-xs">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active">
+          <a href="/reference/">Websites Reference</a>
+        </li>
+        <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <div class="container">
+        <div id="content">
+          <div class="row">
+            <div class="col-md-3 col-md-push-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Basics</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/">Introduction</a>
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title">Filters</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/filters/">Introduction</a>
+      <a class="list-group-item" href="/reference/filters/array_filters/">Array Filters</a>
+      <a class="list-group-item" href="/reference/filters/html_filters/">HTML Filters</a>
+      <a class="list-group-item" href="/reference/filters/markdown_filters/">Markdown Filters</a>
+      <a class="list-group-item" href="/reference/filters/math_filters/">Math Filters</a>
+      <a class="list-group-item" href="/reference/filters/money_filters/">Money Filters</a>
+      <a class="list-group-item" href="/reference/filters/string_filters/">String Filters</a>
+      <a class="list-group-item" href="/reference/filters/text_filters/">Text Filters</a>
+      <a class="list-group-item active" href="/reference/filters/additional_filters/">Additional Filters</a>
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/tags/">Introduction</a>
+      <a class="list-group-item" href="/reference/tags/control_flow_tags/">Control Flow Tags</a>
+      <a class="list-group-item" href="/reference/tags/iteration_tags/">Iteration Tags</a>
+      <a class="list-group-item" href="/reference/tags/theme_tags/">Theme Tags</a>
+      <a class="list-group-item" href="/reference/tags/variable_tags/">Variable Tags</a>
+    </div>
+  </div>
+</div>
+
+            <div class="col-md-9 col-md-pull-3">
+              <h2 id="additional-filters">Additional Filters</h2>
+
+<h3 id="urlencode">url_encode</h3>
+
+<p>Encodes string as an url.</p>
+
+<h5 id="input">Input</h5>
+
+<pre><code class="language-liquid">  &lt;!-- Rental Headline = "Super Headline" --&gt;
+    <span class="p">{{</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">headline</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">url_encode</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output">Output</h5>
+
+<pre><code>  Super%20Headline
+</code></pre>
+
+<h3 id="rentalphotourl">rental_photo_url</h3>
+
+<p>Insterts <code>img</code> tag with link to the given size.</p>
+
+<h5 id="input-1">Input</h5>
+
+<pre><code class="language-html">  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">'{{ photo | rental_photo_url: '</span><span class="na">large</span><span class="err">'</span> <span class="err">}}</span> <span class="na">1200w</span><span class="err">'</span> <span class="nt">&gt;</span></code></pre>
+
+<h5 id="output-1">Output</h5>
+
+<pre><code class="language-html">  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">'.../image/upload/c_fill,fl_progressive,g_center,h_800,q_90,w_1200/v1436964916/uw5bsnqqbkwtxfqocbjd.jpg 1200w'</span> <span class="nt">&gt;</span></code></pre>
+
+<p><br></p>
+
+<p>List of sizes:</p>
+
+<p><br></p>
+<div class="tab-content">
+  <div class="tab-pane active" id="public">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th style="text-align: center">Name</th>
+          <th style="text-align: center">Size</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">compact</td>
+          <td style="text-align: center">384w</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td style="text-align: center">medium</td>
+          <td style="text-align: center">768w</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td style="text-align: center">large</td>
+          <td style="text-align: center">1200w</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td style="text-align: center">grande</td>
+          <td style="text-align: center">1536w</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td style="text-align: center">giant</td>
+          <td style="text-align: center">2400w</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3 id="categoryphotourl">category_photo_url</h3>
+
+<p>Similiar to <code>rental_photo_url</code>.</p>
+
+<h3 id="convertstars">convert_stars</h3>
+
+<p>Converts rental rating to be used as star rating.</p>
+
+<h5 id="input-2">Input</h5>
+
+<pre><code class="language-html">  <span class="c">&lt;!-- Rating = 4.8 --&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">'star-rating rating-{{ rating | convert_stars }}'</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">'sr-only'</span><span class="nt">&gt;</span>{{ rating }}/5<span class="nt">&lt;/span&gt;&lt;/span&gt;</span></code></pre>
+
+<h5 id="output-2">Output</h5>
+
+<pre><code class="language-html">  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">'star-rating rating-100'</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">'sr-only'</span><span class="nt">&gt;</span>4.8/5<span class="nt">&lt;/span&gt;&lt;/span&gt;</span></code></pre>
+
+<h3 id="iso8601">iso8601</h3>
+
+<p>Sets date or time in iso8601 format.</p>
+
+<h5 id="input-3">Input</h5>
+
+<pre><code class="language-html">  <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">'og:updated_time'</span> <span class="na">content=</span><span class="s">'{{ rental.updated_at | iso8601 }}'</span><span class="nt">&gt;</span></code></pre>
+
+<h5 id="output-3">Output</h5>
+
+<pre><code class="language-html">  <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">'og:updated_time'</span> <span class="na">content=</span><span class="s">'2015-08-16T12:42:55Z'</span><span class="nt">&gt;</span></code></pre>
+
+<h3 id="date">date</h3>
+
+<p>Converts a time/date into another format.</p>
+
+<h5 id="input-4">Input</h5>
+
+<pre><code class="language-liquid">  <span class="p">{{</span><span class="w"> </span><span class="nv">article</span><span class="p">.</span><span class="nv">published_at</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s1">'%a, %b %d, %y'</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output-4">Output</h5>
+
+<pre><code>  Tue, Apr 22, 14
+</code></pre>
+
+<blockquote>
+  <h4 id="date-parameters">
+<code>date</code> parameters</h4>
+
+  <p><br></p>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="public">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th style="text-align: center">Paramater</th>
+            <th>Description</th>
+            <th style="text-align: center">Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%a</td>
+            <td>Abbreviated weekday.</td>
+            <td style="text-align: center">Sat</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%A</td>
+            <td>Full weekday name.</td>
+            <td style="text-align: center">Tuesday</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%b</td>
+            <td>Abbreviated month name.</td>
+            <td style="text-align: center">Jan</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%B</td>
+            <td>Full month name</td>
+            <td style="text-align: center">January</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%c</td>
+            <td>Preferred local date and time representation</td>
+            <td style="text-align: center">Tue Apr 22 11:16:09 2014</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%d</td>
+            <td>Day of the month, zero-padded (01, 02, 03, etc.).</td>
+            <td style="text-align: center">04</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%-d</td>
+            <td>Day of the month, not zero-padded (1,2,3, etc.).</td>
+            <td style="text-align: center">4</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%D</td>
+            <td>Formats the date (dd/mm/yy).</td>
+            <td style="text-align: center">04/22/14</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%e</td>
+            <td>Day of the month, blank-padded ( 1, 2, 3, etc.).</td>
+            <td style="text-align: center">3</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%F</td>
+            <td>Returns the date in ISO 8601 format (yyyy-mm-dd).</td>
+            <td style="text-align: center">2014-04-22</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%H</td>
+            <td>Hour of the day, 24-hour clock (00 - 23).</td>
+            <td style="text-align: center">15</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%I</td>
+            <td>Hour of the day, 12-hour clock (1 - 12).</td>
+            <td style="text-align: center">7</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%j</td>
+            <td>Day of the year (001 - 366).</td>
+            <td style="text-align: center">245</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%k</td>
+            <td>Hour of the day, 24-hour clock (1 - 24).</td>
+            <td style="text-align: center">14</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%m</td>
+            <td>Month of the year (01 - 12).</td>
+            <td style="text-align: center">04</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%M</td>
+            <td>Minute of the hour (00 - 59).</td>
+            <td style="text-align: center">53</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%p</td>
+            <td>Meridian indicator (AM/PM).</td>
+            <td style="text-align: center">PM</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%r</td>
+            <td>12-hour time (%I:%M:%S %p)</td>
+            <td style="text-align: center">03:20:07 PM</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%R</td>
+            <td>24-hour time (%H:%M)</td>
+            <td style="text-align: center">15:21</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%T</td>
+            <td>24-hour time (%H:%M:%S)</td>
+            <td style="text-align: center">15:22:13</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%U</td>
+            <td>The number of the week in the current year, starting with the first Sunday as the first day of the first week.</td>
+            <td style="text-align: center">16</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%W</td>
+            <td>The number of the week in the current year, starting with the first Monday as the first day of the first week.</td>
+            <td style="text-align: center">16</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%w</td>
+            <td>Day of the week (0 - 6, with Sunday being 0).</td>
+            <td style="text-align: center">2</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%x</td>
+            <td>Preferred representation for the date alone, no time. (mm/dd/yy).</td>
+            <td style="text-align: center">04/22/14</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%X</td>
+            <td>Preferred representation for the time. (hh:mm:ss).</td>
+            <td style="text-align: center">13:17:24</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%y</td>
+            <td>Year without a century (00.99).</td>
+            <td style="text-align: center">14</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%Y</td>
+            <td>Year with a century.</td>
+            <td style="text-align: center">2014</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td style="text-align: center">%Z</td>
+            <td>Time zone name.</td>
+            <td style="text-align: center">EDT</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</blockquote>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

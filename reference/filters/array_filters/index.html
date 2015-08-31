@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>BookingSync Websites Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/highlight.css">
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="/style.js"></script>
+
+  <!-- you don't need to keep this, but it's cool for stats! -->
+  <meta name="generator" content="nanoc 3.8.0">
+</head>
+
+  <body class="flex-col">
+    <nav id="sidebar-left">
+  <ul class="nav">
+    <li><a href="#" class="sidebar-toggle"><i class="fa fa-close"></i></a></li>
+    <li class="active">
+      <a href="/reference/">Websites Reference</a>
+    </li>
+    <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+  </ul>
+</nav>
+
+    <div class="page-wrapper flex-1 flex-col">
+      <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container flex-row">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle sidebar-toggle visible-xs-block">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/reference/">
+        <img alt="BookingSync" src="/images/bookingsync.svg">
+        <span class="flex-1">Websites Documentation</span>
+      </a>
+    </div>
+    <div class="flex-1 hidden-xs">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active">
+          <a href="/reference/">Websites Reference</a>
+        </li>
+        <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <div class="container">
+        <div id="content">
+          <div class="row">
+            <div class="col-md-3 col-md-push-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Basics</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/">Introduction</a>
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title">Filters</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/filters/">Introduction</a>
+      <a class="list-group-item active" href="/reference/filters/array_filters/">Array Filters</a>
+      <a class="list-group-item" href="/reference/filters/html_filters/">HTML Filters</a>
+      <a class="list-group-item" href="/reference/filters/markdown_filters/">Markdown Filters</a>
+      <a class="list-group-item" href="/reference/filters/math_filters/">Math Filters</a>
+      <a class="list-group-item" href="/reference/filters/money_filters/">Money Filters</a>
+      <a class="list-group-item" href="/reference/filters/string_filters/">String Filters</a>
+      <a class="list-group-item" href="/reference/filters/text_filters/">Text Filters</a>
+      <a class="list-group-item" href="/reference/filters/additional_filters/">Additional Filters</a>
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/tags/">Introduction</a>
+      <a class="list-group-item" href="/reference/tags/control_flow_tags/">Control Flow Tags</a>
+      <a class="list-group-item" href="/reference/tags/iteration_tags/">Iteration Tags</a>
+      <a class="list-group-item" href="/reference/tags/theme_tags/">Theme Tags</a>
+      <a class="list-group-item" href="/reference/tags/variable_tags/">Variable Tags</a>
+    </div>
+  </div>
+</div>
+
+            <div class="col-md-9 col-md-pull-3">
+              <h2 id="array-filters">Array Filters</h2>
+
+<p>Array filters are used to modify the output of arrays.</p>
+
+<ol id="markdown-toc">
+  <li><a href="#join" id="markdown-toc-join">join</a></li>
+  <li><a href="#first" id="markdown-toc-first">first</a></li>
+  <li><a href="#last" id="markdown-toc-last">last</a></li>
+  <li><a href="#index" id="markdown-toc-index">index</a></li>
+  <li><a href="#map" id="markdown-toc-map">map</a></li>
+  <li><a href="#size" id="markdown-toc-size">size</a></li>
+  <li><a href="#sort" id="markdown-toc-sort">sort</a></li>
+</ol>
+
+<h3 id="join">join</h3>
+
+<p>Joins the elements of an array with the character passed as the parameter. The result is a single string.</p>
+
+<h5 id="input">Input</h5>
+
+<pre><code class="language-liquid">  <span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">tags</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">join</span><span class="p">:</span><span class="w"> </span><span class="s1">', '</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output">Output</h5>
+
+<pre><code>tag1, tag2, tag3
+</code></pre>
+
+<h3 id="first">first</h3>
+
+<p>Returns the first element of an array.</p>
+
+<h5 id="input-1">Input</h5>
+
+<pre><code class="language-liquid">  &lt;!-- amenity.tags = 'swimming pool', 'tv', 'boat', 'cellar' --&gt;
+    <span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">tags</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">first</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output-1">Output</h5>
+
+<pre><code>  swimming pool
+</code></pre>
+
+<p><br></p>
+
+<p><code>first</code> can be used in dot notation, in cases where it needs to be used inside a <a href="/tags/">tag</a>.</p>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">tags</span><span class="p">.</span><span class="nv">first</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="s1">'swimming pool'</span><span class="w"> </span><span class="p">%}</span>
+      This apartment is with a swimming pool!
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<h3 id="last">last</h3>
+
+<p>Gets the last element passed in an array.</p>
+
+<h5 id="input-2">Input</h5>
+
+<pre><code class="language-liquid">  &lt;!-- amenity.tags = 'swimming pool', 'tv', 'boat', 'cellar' --&gt;
+    <span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">tags</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">last</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output-2">Output</h5>
+
+<pre><code>cellar
+</code></pre>
+
+<p><br></p>
+
+<p><code>last</code> can be used in dot notation, in cases where it needs to be used inside a <a href="/tags/">tag</a>.</p>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">tags</span><span class="p">.</span><span class="nv">last</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="s1">'swimming pool'</span><span class="p">%}</span>
+      This apartment is with a swimming pool!
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<p><br></p>
+
+<p>Using <code>last</code> on a string returns the last character in the string.</p>
+
+<h5 id="input-3">Input</h5>
+
+<pre><code class="language-liquid">  &lt;!-- amenity.title = 'swimming pool' --&gt;
+  <span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">last</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output-3">Output</h5>
+
+<pre><code>  l
+</code></pre>
+
+<h3 id="index">index</h3>
+
+<p>Returns the item at the specified index location in an array. Note that array numbering starts from zero, so the first item in an array is referenced with <code>[0]</code>.</p>
+
+<h5 id="input-4">Input</h5>
+
+<pre><code class="language-liquid">  &lt;!-- amenity.tags = 'swimming pool', 'tv', 'boat', 'cellar' --&gt;
+    <span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">tags</span><span class="err">[</span><span class="mi">2</span><span class="err">]</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output-4">Output</h5>
+
+<pre><code>  boat
+</code></pre>
+
+<h3 id="map">map</h3>
+
+<p>Accepts an array element’s attribute as a parameter and creates a string out of each array element’s value.</p>
+
+<h5 id="input-5">Input</h5>
+
+<pre><code class="language-liquid">  &lt;!-- collection.title = 'Spring', 'Summer', 'Fall', 'Winter' --&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">collection_titles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>collections<span class="w"> </span>|<span class="w"> </span><span class="na">map</span><span class="o">:</span><span class="w"> </span><span class="s1">'title'</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">collection_titles</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output-5">Output</h5>
+
+<pre><code>  SpringSummerFallWinter
+</code></pre>
+
+<h3 id="size">size</h3>
+
+<p>Returns the size of a string or an array.</p>
+
+<h5 id="input-6">Input</h5>
+
+<pre><code class="language-liquid">  <span class="p">{{</span><span class="w"> </span><span class="err">'</span><span class="s2">"Spring"</span><span class="err">,</span><span class="w"> </span><span class="err">"Summer",</span><span class="w"> </span><span class="err">"Fall",</span><span class="w"> </span><span class="err">"Winter"'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">size</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h5 id="output-6">Output</h5>
+
+<pre><code>  4
+</code></pre>
+
+<p><br></p>
+
+<p><code>size</code> can be used in dot notation, in cases where it needs to be used inside a <a href="/tags/">tag</a>.</p>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">collections</span><span class="p">.</span><span class="nv">frontpage</span><span class="p">.</span><span class="nv">amienities</span><span class="p">.</span><span class="nv">size</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">%}</span>
+      There are more than 10 amienities in this collection!
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<h3 id="sort">sort</h3>
+
+<p>Sorts the elements of an array by a given attribute of an element in the array.</p>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">amenities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>collection.amenities<span class="w"> </span>|<span class="w"> </span><span class="na">sort</span><span class="o">:</span><span class="w"> </span><span class="s1">'title'</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>amenity<span class="w"> </span>in<span class="w"> </span>amenities<span class="w"> </span><span class="p">%}</span>
+      &lt;h4&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/h4&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<p><br></p>
+
+<p>The order of the sorted array is case-sensitive.</p>
+
+<h5 id="input-7">Input</h5>
+
+<pre><code class="language-liquid">  &lt;!-- amenities = 'a', 'b', 'A', 'B' --&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">amenities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>collection.amenities<span class="w"> </span>|<span class="w"> </span><span class="na">sort</span><span class="o">:</span><span class="w"> </span><span class="s1">'title'</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>amenity<span class="w"> </span>in<span class="w"> </span>amenities<span class="w"> </span><span class="p">%}</span>
+       <span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<h5 id="output-7">Output</h5>
+
+<pre><code>  A B a b
+</code></pre>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

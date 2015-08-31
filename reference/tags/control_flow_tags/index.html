@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>BookingSync Websites Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/highlight.css">
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="/style.js"></script>
+
+  <!-- you don't need to keep this, but it's cool for stats! -->
+  <meta name="generator" content="nanoc 3.8.0">
+</head>
+
+  <body class="flex-col">
+    <nav id="sidebar-left">
+  <ul class="nav">
+    <li><a href="#" class="sidebar-toggle"><i class="fa fa-close"></i></a></li>
+    <li class="active">
+      <a href="/reference/">Websites Reference</a>
+    </li>
+    <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+  </ul>
+</nav>
+
+    <div class="page-wrapper flex-1 flex-col">
+      <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container flex-row">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle sidebar-toggle visible-xs-block">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/reference/">
+        <img alt="BookingSync" src="/images/bookingsync.svg">
+        <span class="flex-1">Websites Documentation</span>
+      </a>
+    </div>
+    <div class="flex-1 hidden-xs">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active">
+          <a href="/reference/">Websites Reference</a>
+        </li>
+        <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <div class="container">
+        <div id="content">
+          <div class="row">
+            <div class="col-md-3 col-md-push-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Basics</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/">Introduction</a>
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title">Filters</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/filters/">Introduction</a>
+      <a class="list-group-item" href="/reference/filters/array_filters/">Array Filters</a>
+      <a class="list-group-item" href="/reference/filters/html_filters/">HTML Filters</a>
+      <a class="list-group-item" href="/reference/filters/markdown_filters/">Markdown Filters</a>
+      <a class="list-group-item" href="/reference/filters/math_filters/">Math Filters</a>
+      <a class="list-group-item" href="/reference/filters/money_filters/">Money Filters</a>
+      <a class="list-group-item" href="/reference/filters/string_filters/">String Filters</a>
+      <a class="list-group-item" href="/reference/filters/text_filters/">Text Filters</a>
+      <a class="list-group-item" href="/reference/filters/additional_filters/">Additional Filters</a>
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/tags/">Introduction</a>
+      <a class="list-group-item active" href="/reference/tags/control_flow_tags/">Control Flow Tags</a>
+      <a class="list-group-item" href="/reference/tags/iteration_tags/">Iteration Tags</a>
+      <a class="list-group-item" href="/reference/tags/theme_tags/">Theme Tags</a>
+      <a class="list-group-item" href="/reference/tags/variable_tags/">Variable Tags</a>
+    </div>
+  </div>
+</div>
+
+            <div class="col-md-9 col-md-pull-3">
+              <h2 id="control-flow-tags">Control Flow Tags</h2>
+
+<p>Control Flow tags determine which block of code should be executed based on different conditions.</p>
+
+<ol id="markdown-toc">
+  <li><a href="#if" id="markdown-toc-if">if</a></li>
+  <li><a href="#elsif--else" id="markdown-toc-elsif--else">elsif / else</a></li>
+  <li><a href="#case--when" id="markdown-toc-case--when">case / when</a></li>
+  <li><a href="#unless" id="markdown-toc-unless">unless</a></li>
+</ol>
+
+<h3 id="if">if</h3>
+
+<p>Executes a block of code only if a certain condition is met.</p>
+
+<h5 id="input">Input</h5>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="s1">'Apartment 051'</span><span class="w"> </span><span class="p">%}</span>
+      This Apartment comes with a swimming pool.
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<h5 id="output">Output</h5>
+
+<pre><code>  This Apartment comes with a swimming pool.
+</code></pre>
+
+<h3 id="elsif--else">elsif / else</h3>
+
+<p>Adds more conditions within an <code>if</code> or <code>unless</code> block.</p>
+
+<h5 id="input-1">Input</h5>
+
+<pre><code class="language-liquid">&lt;!-- If customer.name = 'anonymous' --&gt;
+
+  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">customer</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'kevin'</span><span class="w"> </span><span class="p">%}</span>
+    Hey Kevin!
+  <span class="p">{%</span><span class="w"> </span><span class="kr">elsif</span><span class="w"> </span><span class="nv">customer</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'anonymous'</span><span class="w"> </span><span class="p">%}</span>
+    Hey Anonymous!
+  <span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
+    Hi Stranger!
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<h5 id="output-1">Output</h5>
+
+<pre><code>  Hey Anonymous!
+</code></pre>
+
+<h3 id="case--when">case / when</h3>
+
+<p>Creates a switch statement to compare a variable with different values. <code>case</code> initializes the switch statement, and <code>when</code> compares its values.</p>
+
+<h5 id="input-2">Input</h5>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Apartment 4129'</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="kr">case</span><span class="w"> </span><span class="nv">handle</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="kr">when</span><span class="w"> </span><span class="s1">'Apartment 4129'</span><span class="w"> </span><span class="p">%}</span>
+       It is an Apartment 4129
+    <span class="p">{%</span><span class="w"> </span><span class="kr">when</span><span class="w"> </span><span class="s1">'Apartment 5100'</span><span class="w"> </span><span class="p">%}</span>
+       It is an Apartment 5100
+    <span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
+       This is not an Apartment 4129 nor a Apartment 5100
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endcase</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<h5 id="output-2">Output</h5>
+
+<pre><code>  It is an Apartment 4129
+</code></pre>
+
+<h3 id="unless">unless</h3>
+
+<p>Similar to <code>if</code>, but executes a block of code only if a certain condition is <strong>not</strong> met.</p>
+
+<h5 id="input-3">Input</h5>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="s1">'Apartment 051'</span><span class="w"> </span><span class="p">%}</span>
+      This Apartment is without a swimming pool.
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endunless</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<h5 id="output-3">Output</h5>
+
+<pre><code>  This Apartment is without a swimming pool.
+</code></pre>
+
+<p><br></p>
+
+<p>This would be the equivalent of doing the following:</p>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="err">!=</span><span class="w"> </span><span class="s1">'Apartment 051'</span><span class="w"> </span><span class="p">%}</span>
+      This Apartment is without a swimming pool.
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

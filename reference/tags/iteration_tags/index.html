@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>BookingSync Websites Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/highlight.css">
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="/style.js"></script>
+
+  <!-- you don't need to keep this, but it's cool for stats! -->
+  <meta name="generator" content="nanoc 3.8.0">
+</head>
+
+  <body class="flex-col">
+    <nav id="sidebar-left">
+  <ul class="nav">
+    <li><a href="#" class="sidebar-toggle"><i class="fa fa-close"></i></a></li>
+    <li class="active">
+      <a href="/reference/">Websites Reference</a>
+    </li>
+    <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+  </ul>
+</nav>
+
+    <div class="page-wrapper flex-1 flex-col">
+      <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container flex-row">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle sidebar-toggle visible-xs-block">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/reference/">
+        <img alt="BookingSync" src="/images/bookingsync.svg">
+        <span class="flex-1">Websites Documentation</span>
+      </a>
+    </div>
+    <div class="flex-1 hidden-xs">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active">
+          <a href="/reference/">Websites Reference</a>
+        </li>
+        <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <div class="container">
+        <div id="content">
+          <div class="row">
+            <div class="col-md-3 col-md-push-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Basics</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/">Introduction</a>
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title">Filters</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/filters/">Introduction</a>
+      <a class="list-group-item" href="/reference/filters/array_filters/">Array Filters</a>
+      <a class="list-group-item" href="/reference/filters/html_filters/">HTML Filters</a>
+      <a class="list-group-item" href="/reference/filters/markdown_filters/">Markdown Filters</a>
+      <a class="list-group-item" href="/reference/filters/math_filters/">Math Filters</a>
+      <a class="list-group-item" href="/reference/filters/money_filters/">Money Filters</a>
+      <a class="list-group-item" href="/reference/filters/string_filters/">String Filters</a>
+      <a class="list-group-item" href="/reference/filters/text_filters/">Text Filters</a>
+      <a class="list-group-item" href="/reference/filters/additional_filters/">Additional Filters</a>
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title">Tags</h3>
+    </div>
+    <div class="list-group">
+      <a class="list-group-item" href="/reference/tags/">Introduction</a>
+      <a class="list-group-item" href="/reference/tags/control_flow_tags/">Control Flow Tags</a>
+      <a class="list-group-item active" href="/reference/tags/iteration_tags/">Iteration Tags</a>
+      <a class="list-group-item" href="/reference/tags/theme_tags/">Theme Tags</a>
+      <a class="list-group-item" href="/reference/tags/variable_tags/">Variable Tags</a>
+    </div>
+  </div>
+</div>
+
+            <div class="col-md-9 col-md-pull-3">
+              <h2 id="iteration-tags">Iteration Tags</h2>
+
+<p>Iteration Tags are used to run a block of code repeatedly.</p>
+
+<ol id="markdown-toc">
+  <li><a href="#for" id="markdown-toc-for">for</a></li>
+  <li><a href="#break" id="markdown-toc-break">break</a></li>
+  <li><a href="#continue" id="markdown-toc-continue">continue</a></li>
+  <li><a href="#cycle" id="markdown-toc-cycle">cycle</a></li>
+  <li><a href="#tablerow" id="markdown-toc-tablerow">tablerow</a></li>
+</ol>
+
+<h3 id="for">for</h3>
+
+<p>Repeatedly executes a block of code. For a full list of parameters available within a <code>for</code> loop, see <a href="/">forloop(object)</a>.</p>
+
+<p><code>for</code> loops can output a maximum of 50 results per page. In cases where there are more than 50 results, use the <a href="/tags/theme_tags/#paginate">paginate</a> tag to split them across multiple pages.</p>
+
+<h5 id="input">Input</h5>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>amenity<span class="w"> </span>in<span class="w"> </span>collection.amenities<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<h5 id="output">Output</h5>
+
+<pre><code>  gym hoover jacuzzi
+</code></pre>
+
+<blockquote>
+  <h4 id="for-parameters">
+<code>for</code> parameters</h4>
+
+  <h4 id="limit"><em>limit</em></h4>
+
+  <p>Exits the for loop at a specific index.</p>
+
+  <h5 id="input-1">Input</h5>
+  <pre><code class="language-liquid">  &lt;!-- if array = [1,2,3,4,5,6] --&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>array<span class="w"> </span><span class="na">limit</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="p">}}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+  <h5 id="output-1">Output</h5>
+
+  <pre><code>  1 2
+</code></pre>
+
+  <h4 id="offset"><em>offset</em></h4>
+
+  <p>Starts the for loop at a specific index.</p>
+
+  <h5 id="input-2">Input</h5>
+
+  <pre><code class="language-liquid">  &lt;!-- if array = [1,2,3,4,5,6] --&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>array<span class="w"> </span><span class="na">offset</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="p">%}</span>
+       <span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="p">}}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+  <h5 id="output-2">Output</h5>
+
+  <pre><code>  3 4 5 6
+</code></pre>
+
+  <h4 id="range"><em>range</em></h4>
+
+  <p>Defines a range of numbers to loop through. The range can be defined by both literal and variable numbers.</p>
+
+  <h5 id="input-3">Input</h5>
+  <pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>i<span class="w"> </span>in<span class="w"> </span>(<span class="mi">1</span>..num)<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>i<span class="w"> </span>in<span class="w"> </span>(<span class="mi">3</span>..<span class="mi">5</span>)<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+  <h5 id="output-3">Output</h5>
+
+  <pre><code>  1 2 3 4
+  3 4 5
+</code></pre>
+</blockquote>
+
+<h3 id="break">break</h3>
+
+<p>Causes the loop to stop iterating when it encounters the <code>break</code> tag.</p>
+
+<h5 id="input-4">Input</h5>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>i<span class="w"> </span>in<span class="w"> </span>(<span class="mi">1</span>..<span class="mi">5</span>)<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{%</span><span class="w"> </span><span class="nt">break</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{{</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="p">}}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<h5 id="output-4">Output</h5>
+
+<pre><code>  1 2 3
+</code></pre>
+
+<h3 id="continue">continue</h3>
+
+<p>Causes the loop to skip the current iteration when it encounters the <code>continue</code> tag.</p>
+
+<h5 id="input-5">Input</h5>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>i<span class="w"> </span>in<span class="w"> </span>(<span class="mi">1</span>..<span class="mi">5</span>)<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{%</span><span class="w"> </span><span class="nt">continue</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{{</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="p">}}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<h5 id="output-5">Output</h5>
+
+<pre><code>1 2 3   5
+</code></pre>
+
+<h3 id="cycle">cycle</h3>
+
+<p>Loops through a group of strings and outputs them in the order that they were passed as parameters. Each time <code>cycle</code> is called, the next string that was passed as a parameter is output.</p>
+
+<p><code>cycle</code> must be used within a <a href="/tags/iteration_tags#for">for</a> loop block.</p>
+
+<h5 id="input-6">Input</h5>
+
+<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">cycle</span><span class="w"> </span><span class="s1">'one'</span><span class="p">,</span><span class="w"> </span><span class="s1">'two'</span><span class="p">,</span><span class="w"> </span><span class="s1">'three'</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">cycle</span><span class="w"> </span><span class="s1">'one'</span><span class="p">,</span><span class="w"> </span><span class="s1">'two'</span><span class="p">,</span><span class="w"> </span><span class="s1">'three'</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">cycle</span><span class="w"> </span><span class="s1">'one'</span><span class="p">,</span><span class="w"> </span><span class="s1">'two'</span><span class="p">,</span><span class="w"> </span><span class="s1">'three'</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">cycle</span><span class="w"> </span><span class="s1">'one'</span><span class="p">,</span><span class="w"> </span><span class="s1">'two'</span><span class="p">,</span><span class="w"> </span><span class="s1">'three'</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+<h5 id="output-6">Output</h5>
+
+<pre><code>  one
+  two
+  three
+  one
+</code></pre>
+
+<p><br></p>
+
+<p>Uses for <code>cycle</code> include:</p>
+
+<ul>
+  <li>applying odd/even classes to rows in a table</li>
+  <li>applying a unique class to the last rental thumbnail in a row</li>
+</ul>
+
+<p><br></p>
+
+<blockquote>
+  <h4 id="cycle-parameters">
+<code>cycle</code> parameters</h4>
+
+  <p><code>cycle</code> accepts a parameter called <strong>cycle group</strong> in cases where you need multiple <code>cycle</code> blocks in one template. If no name is supplied for the cycle group, then it is assumed that multiple calls with the same parameters are one group.</p>
+
+  <p><br></p>
+
+  <p>The example below shows why cycle groups are necessary when there are multiple instances of the cycle block.</p>
+
+  <pre><code class="language-liquid">  &lt;ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>rental<span class="w"> </span>in<span class="w"> </span>collections.collection-<span class="mi">1</span>.rentals<span class="w"> </span><span class="p">%}</span>
+    &lt;li<span class="p">{%</span><span class="w"> </span><span class="nt">cycle</span><span class="w"> </span><span class="s1">' style="clear:both;"'</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="s1">' class="last"'</span><span class="w"> </span><span class="p">%}</span>&gt;
+      &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">within</span><span class="p">:</span><span class="w"> </span>collection<span class="w"> </span><span class="p">}}</span><span class="nf">"&gt;</span><span class="w"></span>
+<span class="w">        </span>&lt;img<span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="s2">"{{ rental.featured_image.src | rental_img_url: 'medium' }}"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"{{ rental.featured_image.alt }}"</span><span class="w"> </span>/&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  &lt;/ul&gt;
+  &lt;ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>rental<span class="w"> </span>in<span class="w"> </span>collections.collection-<span class="mi">2</span>.rentals<span class="w"> </span><span class="p">%}</span>
+    &lt;li<span class="p">{%</span><span class="w"> </span><span class="nt">cycle</span><span class="w"> </span><span class="s1">' style="clear:both;"'</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="s1">' class="last"'</span><span class="w"> </span><span class="p">%}</span>&gt;
+      &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">within</span><span class="p">:</span><span class="w"> </span>collection<span class="w"> </span><span class="p">}}</span><span class="nf">"&gt;</span><span class="w"></span>
+<span class="w">        </span>&lt;img<span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="s2">"{{ rental.featured_image.src | rental_img_url: 'medium' }}"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"{{ rentals.featured_image.alt }}"</span><span class="w"> </span>/&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  &lt;/ul&gt;</code></pre>
+
+  <p><br></p>
+
+  <p>In the code above, if the first collection only has two rentals, the second collection loop will continue the <code>cycle</code> where the first one left off. This will result in this undesired output:</p>
+
+  <pre><code class="language-html">  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">style=</span><span class="s">"clear:both"</span><span class="nt">&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"last"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">style=</span><span class="s">"clear:both"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span></code></pre>
+
+  <p><br></p>
+
+  <p>To avoid this, cycle groups are used for each cycle block, as shown below.</p>
+
+  <pre><code class="language-liquid">  &lt;ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>rental<span class="w"> </span>in<span class="w"> </span>collections.collection-<span class="mi">1</span>.rentals<span class="w"> </span><span class="p">%}</span>
+  &lt;li<span class="p">{%</span><span class="w"> </span><span class="nt">cycle</span><span class="w"> </span><span class="s1">'group1'</span><span class="p">:</span><span class="w"> </span><span class="s1">' style="clear:both;"'</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="s1">' class="last"'</span><span class="w"> </span><span class="p">%}</span>&gt;
+    &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">within</span><span class="p">:</span><span class="w"> </span>collection<span class="w"> </span><span class="p">}}</span><span class="nf">"&gt;</span><span class="w"></span>
+<span class="w">      </span>&lt;img<span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="s2">"{{ rental.featured_image.src | rental_img_url: "</span>medium<span class="s2">" }}"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"{{ rental.featured_image.alt }}"</span><span class="w"> </span>/&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  &lt;/ul&gt;
+  &lt;ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>rental<span class="w"> </span>in<span class="w"> </span>collections.collection-<span class="mi">2</span>.rentals<span class="w"> </span><span class="p">%}</span>
+    &lt;li<span class="p">{%</span><span class="w"> </span><span class="nt">cycle</span><span class="w"> </span><span class="s1">'group2'</span><span class="p">:</span><span class="w"> </span><span class="s1">' style="clear:both;"'</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span><span class="w"> </span><span class="s1">' class="last"'</span><span class="w"> </span><span class="p">%}</span>&gt;
+      &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">within</span><span class="p">:</span><span class="w"> </span>collection<span class="w"> </span><span class="p">}}</span><span class="nf">"&gt;</span><span class="w"></span>
+<span class="w">        </span>&lt;img<span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="s2">"{{ rental.featured_image.src | rental_img_url: "</span>medium<span class="s2">" }}"</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s2">"{{ rental.featured_image.alt }}"</span><span class="w"> </span>/&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  &lt;/ul&gt;</code></pre>
+
+  <p><br></p>
+
+  <p>With the code above, the two cycle blocks are independent of each other. The result is shown below:</p>
+
+  <pre><code class="language-html">  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">style=</span><span class="s">"clear:both"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+  <span class="c">&lt;!-- new cycle group starts! --&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">style=</span><span class="s">"clear:both"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"last"</span><span class="nt">&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span></code></pre>
+</blockquote>
+
+<h3 id="tablerow">tablerow</h3>
+
+<p>Generates an HTML <code>&lt;table&gt;</code>. Must be wrapped in an opening <code>&lt;table&gt;</code> and closing <code>&lt;/table&gt;</code> HTML tags. For a full list of parameters available within a tablerow loop, see <a href="/">tablerow (object)</a>.</p>
+
+<h5 id="input-7">Input</h5>
+
+<pre><code class="language-liquid">  &lt;table&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">tablerow</span><span class="w"> </span>amenity<span class="w"> </span>in<span class="w"> </span>collection.amenities<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endtablerow</span><span class="w"> </span><span class="p">%}</span>
+  &lt;/table&gt;</code></pre>
+
+<h5 id="output-7">Output</h5>
+
+<pre><code class="language-html">  <span class="nt">&lt;table&gt;</span>
+      <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"row1"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col1"</span><span class="nt">&gt;</span>
+            Air Condition
+          <span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col2"</span><span class="nt">&gt;</span>
+            Balcony
+          <span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col3"</span><span class="nt">&gt;</span>
+            Boat
+          <span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col4"</span><span class="nt">&gt;</span>
+            Car Included
+          <span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col5"</span><span class="nt">&gt;</span>
+            Kids Pool
+          <span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col6"</span><span class="nt">&gt;</span>
+            Washing Machine
+          <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/table&gt;</span></code></pre>
+
+<p><br></p>
+
+<blockquote>
+  <h4 id="tablerow-parameters">
+<code>tablerow</code> parameters</h4>
+
+  <h4 id="cols"><em>cols</em></h4>
+
+  <p>Defines how many columns the table should have.</p>
+
+  <h5 id="input-8">Input</h5>
+
+  <pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">tablerow</span><span class="w"> </span>amenity<span class="w"> </span>in<span class="w"> </span>collection.amenities<span class="w"> </span><span class="na">cols</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endtablerow</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+  <h5 id="output-8">Output</h5>
+
+  <pre><code class="language-html">  <span class="nt">&lt;table&gt;</span>
+      <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"row1"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col1"</span><span class="nt">&gt;</span>
+            Air Condition
+          <span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col2"</span><span class="nt">&gt;</span>
+            Balcony
+          <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"row2"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col1"</span><span class="nt">&gt;</span>
+            Boat
+          <span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col2"</span><span class="nt">&gt;</span>
+            Car Included
+          <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"row3"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col1"</span><span class="nt">&gt;</span>
+            Kids Pool
+          <span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"col2"</span><span class="nt">&gt;</span>
+            Washing Machine
+          <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/table&gt;</span></code></pre>
+
+  <p><br></p>
+
+  <h4 id="limit-1"><em>limit</em></h4>
+
+  <p>Exits the tablerow after a specific index.</p>
+
+  <pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">tablerow</span><span class="w"> </span>amenity<span class="w"> </span>in<span class="w"> </span>collection.amenities<span class="w"> </span><span class="na">cols</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="na">limit</span><span class="o">:</span><span class="mi">3</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endtablerow</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+  <h4 id="offset-1"><em>offset</em></h4>
+
+  <p>Starts the tablerow after a specific index.</p>
+
+  <pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">tablerow</span><span class="w"> </span>amenity<span class="w"> </span>in<span class="w"> </span>collection.amenities<span class="w"> </span><span class="na">cols</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="na">offset</span><span class="o">:</span><span class="mi">3</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">amenity</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endtablerow</span><span class="w"> </span><span class="p">%}</span></code></pre>
+
+  <h4 id="range-1"><em>range</em></h4>
+
+  <p>Defines a range of numbers to loop through. The range can be defined by both literal and variable numbers.</p>
+
+  <pre><code class="language-liquid">  &lt;!--variable number example--&gt;
+
+  <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">%}</span>
+  &lt;table&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">tablerow</span><span class="w"> </span>i<span class="w"> </span>in<span class="w"> </span>(<span class="mi">1</span>..num)<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endtablerow</span><span class="w"> </span><span class="p">%}</span>
+  &lt;/table&gt;
+
+  &lt;!--literal number example--&gt;
+
+  &lt;table&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">tablerow</span><span class="w"> </span>i<span class="w"> </span>in<span class="w"> </span>(<span class="mi">3</span>..<span class="mi">5</span>)<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{{</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="p">}}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endtablerow</span><span class="w"> </span><span class="p">%}</span>
+  &lt;/table&gt;</code></pre>
+</blockquote>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
