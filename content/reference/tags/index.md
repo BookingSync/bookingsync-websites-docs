@@ -6,7 +6,7 @@ Certain tags, such as `for` and `cycle` can take on parameters. Details for each
 
 Tags can be broken down into four categories:
 
-1. [Control Flow Tags](/tags/control_flow_tags/)
-2. [Iteration Tags](/tags/iteration_tags/)
-3. [Theme Tags](/tags/theme_tags/)
-4. [Variable Tags](/tags/variable_tags/)
+1. [Control Flow Tags](/reference/tags/control_flow_tags/)
+2. [Iteration Tags](/reference/tags/iteration_tags/)
+3. [Theme Tags](/reference/tags/theme_tags/)
+4. [Variable Tags](/reference/tags/variable_tags/)
