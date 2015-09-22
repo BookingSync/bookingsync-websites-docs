@@ -21,3 +21,5 @@ Available attributes:
 * count
 * id
 * selected
+* logo
+* color
