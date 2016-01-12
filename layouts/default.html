@@ -2,15 +2,16 @@
 <html lang="en">
   <%= render "head" %>
   <body class="flex-col">
-    <%= render "sidebar_left" %>
     <div class="page-wrapper flex-1 flex-col">
       <%= render "navigation_menu" %>
-      <div class="container">
-        <div id="content">
-          <div class="row">
-            <%= render "reference" %>
-            <div class="col-md-9 col-md-pull-3">
-              <%= yield %>
+      <div class="container content">
+        <div class="row">
+          <%= render "reference" %>
+          <div class="col-md-9 col-md-pull-3">
+            <div class="panel panel-default">
+              <div class="panel-body reference-body">
+                <%= yield %>
+              </div>
             </div>
           </div>
         </div>
