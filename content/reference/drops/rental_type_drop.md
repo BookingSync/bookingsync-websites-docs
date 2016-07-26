@@ -16,7 +16,7 @@ Returns information about rental type.
 
 Available attributes:
 
-* name
 * count
 * id
+* name
 * selected

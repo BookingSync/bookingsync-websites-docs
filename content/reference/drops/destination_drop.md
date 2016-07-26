@@ -16,7 +16,14 @@ Returns attributes for selected `Destination`, for example in search bar.
 
 Available attributes:
 
+* ancestors
+* children
 * id
 * name
 * count
+* content
+* parent
+* photos
 * selected
+* title
+* url
