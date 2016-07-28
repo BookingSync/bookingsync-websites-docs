@@ -16,7 +16,20 @@ Available attributes:
 
 * display_type
 * display_list_url
-* display_photos_url
 * display_map_url
+* max_latitude
+* max_longitude
+* min_latitude
+* min_longitude
+* next_page
+* next_page_url
+* page
+* page_count
+* page_end
+* page_start
+* per_page
+* previous_page
+* previous_page_url
 * rentals
 * rental_ids
+* total_count

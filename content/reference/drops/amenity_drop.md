@@ -16,7 +16,7 @@ Gives you access to all amenities and their attributes.
 
 Available attributes:
 
-* name
-* id
 * available
+* id
+* name
 * selected

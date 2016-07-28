@@ -19,3 +19,4 @@ Allows you to show rental availability map.
 Available attribute:
 
 * map
+* start_date

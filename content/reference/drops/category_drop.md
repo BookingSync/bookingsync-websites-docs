@@ -10,8 +10,10 @@ Gives you access to attributes of `Category`.
 
 Available attributes:
 
-* promoted
-* url
-* title
 * content
+* page_title
+* page_description
 * photos
+* promoted
+* title
+* url

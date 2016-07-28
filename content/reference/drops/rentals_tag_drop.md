@@ -17,9 +17,9 @@ Returns attributes for Rentals Tags.
 
 Available attributes:
 
-* name
+* color
 * count
 * id
-* selected
 * logo
-* color
+* name
+* selected

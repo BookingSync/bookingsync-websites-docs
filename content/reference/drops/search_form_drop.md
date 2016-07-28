@@ -26,10 +26,16 @@ Available attributes:
 * checkout
 * currency
 * destinations
+* root_destinations
+* primary_destinations
+* selected_destinations
+* selected_root_destinations
+* selected_primary_destinations
 * display_name
 * dislay_type
 * guests
 * guests_choices
+* length_of_stay
 * min_price
 * min_price_for_stay
 * max_price
@@ -40,4 +46,6 @@ Available attributes:
 * rentals_tags
 * rental_types
 * search_url
-* selected_destinations
+* selected_rentals_tags
+* sort_by
+* sort_choices

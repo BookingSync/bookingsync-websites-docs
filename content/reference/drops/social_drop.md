@@ -21,6 +21,8 @@ Available attributes:
 * facebook
 * facebook_app
 * googleplus
+* instagram
+* linkedin
 * pinterest
 * skype
 * twitter

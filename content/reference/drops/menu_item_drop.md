@@ -12,6 +12,8 @@ Returns attributes of menu items.
 
 Available attributes:
 
-* url
-* title
+* kind
+* reference
 * submenu
+* title
+* url
