@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/assets/stylesheets/application.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="/highlight.css">
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="/assets/javascripts/application.js"></script>
 
   <!-- you don't need to keep this, but it's cool for stats! -->
@@ -96,9 +96,15 @@
       <a class="list-group-item" href="/reference/objects/twitter/">Twitter</a>
     </div>
     <div class="panel-heading">
-      <h3 class="panel-title">Filters</h3>
+      <h3 class="panel-title">Templates</h3>
     </div>
     <div class="list-group">
+      <a class="list-group-item active" href="/reference/templates/">Introduction</a>
+    </div>
+    <div class="panel-heading">
+      <h3 class="panel-title">Filters</h3>
+    </div>
+    <div class="list-group" id="filters">
       <a class="list-group-item" href="/reference/filters/">Introduction</a>
       <a class="list-group-item" href="/reference/filters/array_filters/">Array Filters</a>
       <a class="list-group-item" href="/reference/filters/html_filters/">HTML Filters</a>
@@ -125,120 +131,68 @@
           <div class="col-md-9 col-md-pull-3">
             <div class="panel panel-default">
               <div class="panel-body reference-body">
-                <h2 id="variable-tags">Variable Tags</h2>
+                <h2 id="templates">Templates</h2>
 
-<p>Variable Tags are used to create new Liquid variables.</p>
+<p>BookingSync themes are made up of Liquid template files, each serving their own unique purpose. For example, <code>search.liquid</code> is used to display multiple rentals, and <code>rental.liquid</code> is used to show the details of a single rental.</p>
 
-<ol id="markdown-toc">
-  <li><a href="#assign" id="markdown-toc-assign">assign</a></li>
-  <li><a href="#capture" id="markdown-toc-capture">capture</a></li>
-  <li><a href="#increment" id="markdown-toc-increment">increment</a></li>
-  <li><a href="#decrement" id="markdown-toc-decrement">decrement</a></li>
-</ol>
+<h3 id="theme-structure">Theme Structure</h3>
 
-<h3 id="assign">assign</h3>
+<p>A BookingSync theme comprises the following directories:</p>
 
-<p>Creates a new variable.</p>
+<ul>
+  <li>images</li>
+  <li>javascripts</li>
+  <li>layouts</li>
+  <li>snippets</li>
+  <li>stylesheets</li>
+  <li>templates</li>
+</ul>
 
-<h5 id="input">Input</h5>
+<h4 id="images-directory">Images directory</h4>
 
-<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">my_variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">%}</span>
-  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">my_variable</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">%}</span>
-  This statement is valid.
-  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre>
+<p>The <code>images</code> directory contains all the images used in the theme, including theme images and vendors images.</p>
 
-<h5 id="output">Output</h5>
+<h4 id="javascripts-directory">Javascripts directory</h4>
 
-<pre><code>   This statement is valid.
-</code></pre>
+<p>The <code>javascripts</code> directory contains all the javascripts files used in the theme.</p>
 
-<p><br></p>
+<p>You can write javascript using <code>javascript</code> or <code>coffeescript</code> languages.</p>
 
-<p>Use quotations <code>" "</code> to save the variable as a string.</p>
+<h4 id="layouts-directory">Layouts directory</h4>
 
-<h5 id="input-1">Input</h5>
+<p>The <code>layouts</code> directory contains theme layout templates. All Liquid templates inside the templates folder are rendered inside the <code>theme.liquid</code> file.</p>
 
-<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"bar"</span><span class="w"> </span><span class="p">%}</span>
-  <span class="p">{{</span><span class="w"> </span><span class="nv">foo</span><span class="w"> </span><span class="p">}}</span></code></pre>
+<h4 id="snippets-directory">Snippets directory</h4>
 
-<h5 id="output-1">Output</h5>
+<p>The <code>snippets</code> directory contains all the theme’s Liquid snippet files, which are bits of code that can be referenced in other templates of a theme.</p>
 
-<pre><code>  bar
-</code></pre>
+<p>Use the <code>include</code> tag to load a snippet into your theme.</p>
 
-<h3 id="capture">capture</h3>
+<h5 id="example">Example:</h5>
 
-<p>Captures the string inside of the opening and closing tags and assigns it to a variable. Variables created through <code>capture</code> are strings.</p>
+<pre><code class="language-liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="s1">'snippets/home_slider'</span><span class="w"> </span><span class="p">%}</span></code></pre>
 
-<h5 id="input-2">Input</h5>
+<h4 id="stylesheets-directory">Stylesheets directory</h4>
 
-<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">my_variable</span><span class="w"> </span><span class="p">%}</span>I am being captured.<span class="p">{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">%}</span>
-  <span class="p">{{</span><span class="w"> </span><span class="nv">my_variable</span><span class="w"> </span><span class="p">}}</span></code></pre>
+<p>The <code>stylesheets</code> directory contains all the CSS files used in the theme.</p>
 
-<h5 id="output-2">Output</h5>
+<p>You can write CSS using <code>css</code>, <code>scss</code> or <code>sass</code> languages.</p>
 
-<pre><code>  I am being captured.
-</code></pre>
+<h4 id="templates-directory">Templates directory</h4>
 
-<h3 id="increment">increment</h3>
+<p>The <code>templates</code> directory contains all other Liquid templates:</p>
 
-<p>Creates a new number variable, and increases its value by one every time it is called. The initial value is 0.</p>
-
-<h5 id="input-3">Input</h5>
-
-<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">increment</span><span class="w"> </span>variable<span class="w"> </span><span class="p">%}</span>
-  <span class="p">{%</span><span class="w"> </span><span class="nt">increment</span><span class="w"> </span>variable<span class="w"> </span><span class="p">%}</span>
-  <span class="p">{%</span><span class="w"> </span><span class="nt">increment</span><span class="w"> </span>variable<span class="w"> </span><span class="p">%}</span></code></pre>
-
-<h5 id="output-3">Output</h5>
-
-<pre><code>  0
-  1
-  2
-</code></pre>
-
-<p><br></p>
-
-<p>Variables created through the <code>increment</code> tag are independent from variables created through <code>assign</code> or <code>capture</code>.</p>
-
-<p>In the example below, a variable named <em>“var”</em> is created through <code>assign</code>. The <code>increment</code> tag is then used several times on a variable with the same name. However, note that the <code>increment</code> tag does not affect the value of <em>“var”</em> that was created through <code>assign</code>.</p>
-
-<h5 id="input-4">Input</h5>
-
-<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">%}</span>
-  <span class="p">{%</span><span class="w"> </span><span class="nt">increment</span><span class="w"> </span>var<span class="w"> </span><span class="p">%}</span>
-  <span class="p">{%</span><span class="w"> </span><span class="nt">increment</span><span class="w"> </span>var<span class="w"> </span><span class="p">%}</span>
-  <span class="p">{%</span><span class="w"> </span><span class="nt">increment</span><span class="w"> </span>var<span class="w"> </span><span class="p">%}</span>
-  <span class="p">{{</span><span class="w"> </span><span class="nv">var</span><span class="w"> </span><span class="p">}}</span></code></pre>
-
-<h5 id="output-4">Output</h5>
-
-<pre><code>  0
-  1
-  2
-  10
-</code></pre>
-
-<h3 id="decrement">decrement</h3>
-
-<p>Creates a new number variable, and decreases its value by one every time it is called. The initial value is -1.</p>
-
-<h5 id="input-5">Input</h5>
-
-<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">decrement</span><span class="w"> </span>variable<span class="w"> </span><span class="p">%}</span>
-  <span class="p">{%</span><span class="w"> </span><span class="nt">decrement</span><span class="w"> </span>variable<span class="w"> </span><span class="p">%}</span>
-  <span class="p">{%</span><span class="w"> </span><span class="nt">decrement</span><span class="w"> </span>variable<span class="w"> </span><span class="p">%}</span></code></pre>
-
-<h5 id="output-5">Output</h5>
-
-<pre><code>  -1
-  -2
-  -3
-</code></pre>
-
-<p><br></p>
-
-<p>Like <a href="/tags/variable_tags#increment">increment</a>, variables declared inside <code>decrement</code> are independent from variables created through <code>assign</code> or <code>capture</code>.</p>
+<ul>
+  <li><code>404.liquid</code></li>
+  <li><code>category.liquid</code></li>
+  <li><code>contact.liquid</code></li>
+  <li><code>destination.liquid</code></li>
+  <li><code>index.liquid</code></li>
+  <li><code>info_window.liquid</code></li>
+  <li><code>page.liquid</code></li>
+  <li><code>rental.liquid</code></li>
+  <li><code>search.liquid</code></li>
+</ul>
 
               </div>
             </div>
@@ -246,5 +200,6 @@
         </div>
       </div>
     </div>
+    <a href="#" class="btn btn-secondary scroll"><i class="fa fa-chevron-up"></i></a>
   </body>
 </html>
