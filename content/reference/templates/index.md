@@ -33,7 +33,11 @@ The `snippets` directory contains all the theme's Liquid snippet files, which ar
 
 Use the `include` tag to load a snippet into your theme.
 
-e.g `{% include 'snippets/home_slider' %}`
+#### Example:
+
+~~~ liquid
+{% include 'snippets/home_slider' %}
+~~~
 
 ### Stylesheets directory
 
