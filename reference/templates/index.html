@@ -61,12 +61,20 @@
       <a class="list-group-item" href="/reference/objects/amenity/">Amenity</a>
       <a class="list-group-item" href="/reference/objects/availability/">Availability</a>
       <a class="list-group-item" href="/reference/objects/base/">Base</a>
+      <a class="list-group-item" href="/reference/objects/bathroom/">Bathroom</a>
+      <a class="list-group-item" href="/reference/objects/bathroom_amenity/">Bathroom Amenity</a>
+      <a class="list-group-item" href="/reference/objects/bed_kind/">Bed Kind</a>
+      <a class="list-group-item" href="/reference/objects/bedroom/">Bedroom</a>
       <a class="list-group-item" href="/reference/objects/categories/">Categories</a>
       <a class="list-group-item" href="/reference/objects/category/">Category</a>
+      <a class="list-group-item" href="/reference/objects/category_locale/">Category Locale</a>
+      <a class="list-group-item" href="/reference/objects/category_locales/">Category Locales</a>
       <a class="list-group-item" href="/reference/objects/contact_request/">Contact Request</a>
       <a class="list-group-item" href="/reference/objects/context/">Context</a>
       <a class="list-group-item" href="/reference/objects/current_page/">Current Page</a>
       <a class="list-group-item" href="/reference/objects/destination/">Destination</a>
+      <a class="list-group-item" href="/reference/objects/destination_locale/">Destination Locale</a>
+      <a class="list-group-item" href="/reference/objects/destination_locales/">Destination Locales</a>
       <a class="list-group-item" href="/reference/objects/form_error/">Form Error</a>
       <a class="list-group-item" href="/reference/objects/guest/">Guest</a>
       <a class="list-group-item" href="/reference/objects/locale/">Locale</a>
@@ -91,6 +99,7 @@
       <a class="list-group-item" href="/reference/objects/search_form/">Search Form</a>
       <a class="list-group-item" href="/reference/objects/site/">Site</a>
       <a class="list-group-item" href="/reference/objects/social/">Social</a>
+      <a class="list-group-item" href="/reference/objects/sort/">Sort</a>
       <a class="list-group-item" href="/reference/objects/time/">Time</a>
       <a class="list-group-item" href="/reference/objects/tweet/">Tweet</a>
       <a class="list-group-item" href="/reference/objects/twitter/">Twitter</a>
@@ -99,7 +108,8 @@
       <h3 class="panel-title">Templates</h3>
     </div>
     <div class="list-group">
-      <a class="list-group-item active" href="/reference/templates/">Introduction</a>
+      <a class="list-group-item" href="/reference/templates/introduction">Introduction</a>
+      <a class="list-group-item" href="/reference/templates/index">index.liquid</a>
     </div>
     <div class="panel-heading">
       <h3 class="panel-title">Filters</h3>
@@ -131,68 +141,31 @@
           <div class="col-md-9 col-md-pull-3">
             <div class="panel panel-default">
               <div class="panel-body reference-body">
-                <h2 id="templates">Templates</h2>
+                <h2 id="indexliquid">index.liquid</h2>
 
-<p>BookingSync themes are made up of Liquid template files, each serving their own unique purpose. For example, <code>search.liquid</code> is used to display multiple rentals, and <code>rental.liquid</code> is used to show the details of a single rental.</p>
+<p>The <code>index.liquid</code> template renders the homepage of the website. The template is loaded when you go to the root (“/”) of the website.</p>
 
-<h3 id="theme-structure">Theme Structure</h3>
+<p>Inside the <code>index.liquid</code> template, you may want to show the contents of a specific object. For example, you may want to showcase the list of categories on the homepage.</p>
 
-<p>A BookingSync theme comprises the following directories:</p>
+<h3 id="parameters">Parameters</h3>
 
-<ul>
-  <li>images</li>
-  <li>javascripts</li>
-  <li>layouts</li>
-  <li>snippets</li>
-  <li>stylesheets</li>
-  <li>templates</li>
-</ul>
-
-<h4 id="images-directory">Images directory</h4>
-
-<p>The <code>images</code> directory contains all the images used in the theme, including theme images and vendors images.</p>
-
-<h4 id="javascripts-directory">Javascripts directory</h4>
-
-<p>The <code>javascripts</code> directory contains all the javascripts files used in the theme.</p>
-
-<p>You can write javascript using <code>javascript</code> or <code>coffeescript</code> languages.</p>
-
-<h4 id="layouts-directory">Layouts directory</h4>
-
-<p>The <code>layouts</code> directory contains theme layout templates. All Liquid templates inside the templates folder are rendered inside the <code>theme.liquid</code> file.</p>
-
-<h4 id="snippets-directory">Snippets directory</h4>
-
-<p>The <code>snippets</code> directory contains all the theme’s Liquid snippet files, which are bits of code that can be referenced in other templates of a theme.</p>
-
-<p>Use the <code>include</code> tag to load a snippet into your theme.</p>
-
-<h5 id="example">Example:</h5>
-
-<pre><code class="language-liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="s1">'snippets/home_slider'</span><span class="w"> </span><span class="p">%}</span></code></pre>
-
-<h4 id="stylesheets-directory">Stylesheets directory</h4>
-
-<p>The <code>stylesheets</code> directory contains all the CSS files used in the theme.</p>
-
-<p>You can write CSS using <code>css</code>, <code>scss</code> or <code>sass</code> languages.</p>
-
-<h4 id="templates-directory">Templates directory</h4>
-
-<p>The <code>templates</code> directory contains all other Liquid templates:</p>
-
-<ul>
-  <li><code>404.liquid</code></li>
-  <li><code>category.liquid</code></li>
-  <li><code>contact.liquid</code></li>
-  <li><code>destination.liquid</code></li>
-  <li><code>index.liquid</code></li>
-  <li><code>info_window.liquid</code></li>
-  <li><code>page.liquid</code></li>
-  <li><code>rental.liquid</code></li>
-  <li><code>search.liquid</code></li>
-</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>debug</td>
+      <td>Boolean</td>
+      <td>
+<a href="introduction/index.html">Debug mode</a>. Default = 0</td>
+    </tr>
+  </tbody>
+</table>
 
               </div>
             </div>
