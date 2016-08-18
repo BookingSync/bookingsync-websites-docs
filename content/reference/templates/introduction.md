@@ -55,7 +55,7 @@ The `templates` directory contains all other Liquid templates:
 * `destination.liquid`
 * `index.liquid`
 * `info_window.liquid`
-* `page.liquid`
+* [page.liquid](/reference/templates/page)
 * `rental.liquid`
 * `search.liquid`
 
