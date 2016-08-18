@@ -49,11 +49,11 @@ You can write CSS using `css`, `scss` or `sass` languages.
 
 The `templates` directory contains all other Liquid templates:
 
-* `404.liquid`
+* [404.liquid](/reference/templates/404)
 * `category.liquid`
 * `contact.liquid`
 * `destination.liquid`
-* `index.liquid`
+* [index.liquid](/reference/templates/index)
 * `info_window.liquid`
 * [page.liquid](/reference/templates/page)
 * `rental.liquid`
