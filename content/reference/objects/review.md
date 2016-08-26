@@ -17,6 +17,7 @@ Returns review attributes.
 
 Available attributes:
 
+* id
 * name
 * rating
 * comment
