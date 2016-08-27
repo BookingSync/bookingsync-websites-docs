@@ -18,5 +18,8 @@ Allows you to show rental availability map.
 
 Available attribute:
 
-* map
-* start_date
+Name        | Type   | Description
+------------|--------|------------
+map         | String | status of the day (if it’s available etc.)
+start_date  | Date   | start date
+{: class="table table-bordered"}

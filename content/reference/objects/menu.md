@@ -10,4 +10,7 @@ Returns created menu items Array ordered by position.
 
 Available attributes:
 
-* items
+Name  | Type       | Description
+------|------------|------------
+items | Collection | menu's items
+{: class="table table-bordered"}

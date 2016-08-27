@@ -10,5 +10,8 @@ Allows to check and show Form errors.
 
 Available attributes:
 
-* key
-* messages
+Name     | Type   | Description
+---------|--------|------------
+key      | String | error's key
+messages | String | error's messages
+{: class="table table-bordered"}

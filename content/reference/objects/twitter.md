@@ -12,6 +12,9 @@ Return attributes for Twitter account.
 
 Available attributes:
 
-* last_tweet
-* tweets
-* user
+Name       | Type       | Description
+-----------|------------|------------
+last_tweet | String     | last tweet
+tweets     | Collection | all tweets
+user       | String     | user
+{: class="table table-bordered"}

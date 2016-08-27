@@ -13,5 +13,8 @@ Return attributes for Twitter tweets.
 
 Available attributes:
 
-* text
-* created_at
+Name       | Type   | Description
+-----------|--------|------------
+text       | String | tweet's text
+created_at | Date   | tweet's date of creation
+{: class="table table-bordered"}

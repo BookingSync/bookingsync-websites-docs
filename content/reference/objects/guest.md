@@ -16,5 +16,8 @@ Returns attributes for selected `Guests` number.
 
 Available attributes:
 
-* count
-* selected
+Name     | Type    | Description
+---------|---------|------------
+count    | Integer | guest's count
+selected | Boolean | check if guest is selected or not
+{: class="table table-bordered"}

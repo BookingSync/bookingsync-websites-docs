@@ -18,13 +18,16 @@ Return attributes for social media inputs.
 
 Available attributes:
 
-* facebook
-* facebook_app
-* googleplus
-* instagram
-* linkedin
-* pinterest
-* skype
-* twitter
-* vimeo
-* youtube
+Name         | Type | Description
+-------------|------|------------
+facebook     | String | Facebook profile's link
+facebook_app | String | Facebook App's link
+googleplus   | String | Google+ profile's link (lol)
+instagram    | String | Instagram profile's link
+linkedin     | String | Linkedin profile's link
+pinterest    | String | Pinterest profile's link
+skype        | String | Skype username
+twitter      | String | Twitter profile's link
+vimeo        | String | Vimeo profile's link
+youtube      | String | Youtube profile's link
+{: class="table table-bordered"}
