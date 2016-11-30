@@ -11,6 +11,7 @@ Returns attributes of page.
 
 Available attributes:
 
+* handle
 * title
 * content
 * page_title
