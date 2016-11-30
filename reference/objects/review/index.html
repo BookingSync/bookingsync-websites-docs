@@ -110,6 +110,10 @@
     <div class="list-group">
       <a class="list-group-item" href="/reference/templates/introduction">Introduction</a>
       <a class="list-group-item" href="/reference/templates/index">index.liquid</a>
+      <a class="list-group-item" href="/reference/templates/page">page.liquid</a>
+      <a class="list-group-item" href="/reference/templates/rental">rental.liquid</a>
+      <a class="list-group-item" href="/reference/templates/search">search.liquid</a>
+      <a class="list-group-item" href="/reference/templates/404">404.liquid</a>
     </div>
     <div class="panel-heading">
       <h3 class="panel-title">Filters</h3>
@@ -141,7 +145,8 @@
           <div class="col-md-9 col-md-pull-3">
             <div class="panel panel-default">
               <div class="panel-body reference-body">
-                <h2 id="review">Review</h2>
+                
+<h2 id="review">Review</h2>
 
 <p>Returns review attributes.</p>
 
@@ -158,12 +163,47 @@
 
 <p>Available attributes:</p>
 
-<ul>
-  <li>name</li>
-  <li>rating</li>
-  <li>comment</li>
-  <li>created_at</li>
-</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>comment</td>
+      <td>String</td>
+      <td>review’s comment</td>
+    </tr>
+    <tr>
+      <td>created_at</td>
+      <td>Date</td>
+      <td>review’s date</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>Integer</td>
+      <td>review’s id</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>reviewer’s name</td>
+    </tr>
+    <tr>
+      <td>rating</td>
+      <td>Integer</td>
+      <td>review’s rating. Maximum value is 5.</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>String</td>
+      <td>review’s title</td>
+    </tr>
+  </tbody>
+</table>
 
               </div>
             </div>

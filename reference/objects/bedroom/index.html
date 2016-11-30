@@ -110,6 +110,10 @@
     <div class="list-group">
       <a class="list-group-item" href="/reference/templates/introduction">Introduction</a>
       <a class="list-group-item" href="/reference/templates/index">index.liquid</a>
+      <a class="list-group-item" href="/reference/templates/page">page.liquid</a>
+      <a class="list-group-item" href="/reference/templates/rental">rental.liquid</a>
+      <a class="list-group-item" href="/reference/templates/search">search.liquid</a>
+      <a class="list-group-item" href="/reference/templates/404">404.liquid</a>
     </div>
     <div class="panel-heading">
       <h3 class="panel-title">Filters</h3>
@@ -145,17 +149,57 @@
 
 <p>Available attributes:</p>
 
-<ul>
-  <li>available_bed_kinds <small><em>(aliases as “bed_kinds”)</em></small>
-</li>
-  <li>bunk_beds_count</li>
-  <li>double_beds_count</li>
-  <li>kingsize_beds_count</li>
-  <li>name</li>
-  <li>queensize_beds_count</li>
-  <li>single_beds_count</li>
-  <li>sofa_beds_count</li>
-</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>available_bed_kinds / bed_kinds</td>
+      <td>Collection</td>
+      <td>collection of beds</td>
+    </tr>
+    <tr>
+      <td>bunk_beds_count</td>
+      <td>Integer</td>
+      <td>number of bunk bed</td>
+    </tr>
+    <tr>
+      <td>double_beds_count</td>
+      <td>Integer</td>
+      <td>number of double bed</td>
+    </tr>
+    <tr>
+      <td>kingsize_beds_count</td>
+      <td>Integer</td>
+      <td>number of kingsize</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>name of bedroom</td>
+    </tr>
+    <tr>
+      <td>queensize_beds_count</td>
+      <td>Integer</td>
+      <td>number of queensize</td>
+    </tr>
+    <tr>
+      <td>single_beds_count</td>
+      <td>Integer</td>
+      <td>number of single bed</td>
+    </tr>
+    <tr>
+      <td>sofa_beds_count</td>
+      <td>Integer</td>
+      <td>number of sofa bed</td>
+    </tr>
+  </tbody>
+</table>
 
               </div>
             </div>

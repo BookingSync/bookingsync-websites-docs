@@ -110,6 +110,10 @@
     <div class="list-group">
       <a class="list-group-item" href="/reference/templates/introduction">Introduction</a>
       <a class="list-group-item" href="/reference/templates/index">index.liquid</a>
+      <a class="list-group-item" href="/reference/templates/page">page.liquid</a>
+      <a class="list-group-item" href="/reference/templates/rental">rental.liquid</a>
+      <a class="list-group-item" href="/reference/templates/search">search.liquid</a>
+      <a class="list-group-item" href="/reference/templates/404">404.liquid</a>
     </div>
     <div class="panel-heading">
       <h3 class="panel-title">Filters</h3>
@@ -157,12 +161,37 @@
 
 <p>Available attributes:</p>
 
-<ul>
-  <li>available</li>
-  <li>id</li>
-  <li>name</li>
-  <li>selected</li>
-</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>available</td>
+      <td>Boolean</td>
+      <td>if amenity is available or not</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>amenity uniq identifier</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>translated amenity name</td>
+    </tr>
+    <tr>
+      <td>selected</td>
+      <td>Boolean</td>
+      <td>if amenity is selected or not</td>
+    </tr>
+  </tbody>
+</table>
 
               </div>
             </div>

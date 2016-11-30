@@ -60,7 +60,7 @@
       <a class="list-group-item" href="/reference/objects/">Introduction</a>
       <a class="list-group-item" href="/reference/objects/amenity/">Amenity</a>
       <a class="list-group-item" href="/reference/objects/availability/">Availability</a>
-      <a class="list-group-item active" href="/reference/objects/base/">Base</a>
+      <a class="list-group-item" href="/reference/objects/base/">Base</a>
       <a class="list-group-item" href="/reference/objects/bathroom/">Bathroom</a>
       <a class="list-group-item" href="/reference/objects/bathroom_amenity/">Bathroom Amenity</a>
       <a class="list-group-item" href="/reference/objects/bed_kind/">Bed Kind</a>
@@ -145,26 +145,29 @@
           <div class="col-md-9 col-md-pull-3">
             <div class="panel panel-default">
               <div class="panel-body reference-body">
-                <h2 id="base">Base</h2>
+                <h2 id="liquid">404.liquid</h2>
 
-<p>Generates urls and paths to default sections of the website.</p>
+<p>The <code>404.liquid</code> template renders a page where visitors are taken to if they enter an invalid URL.</p>
 
-<h5 id="example">Example</h5>
+<h3 id="parameters">Parameters</h3>
 
-<pre><code class="language-liquid">  &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">contact_url</span><span class="w"> </span><span class="p">}}</span>" class="btn btn-info"&gt;<span class="p">{%</span><span class="w"> </span><span class="nt">t</span><span class="w"> </span><span class="s1">'footer.contact.message'</span><span class="w"> </span><span class="p">%}</span>&lt;/a&gt;</code></pre>
-
-<p>Available paths:</p>
-
-<ul>
-  <li>category</li>
-  <li>contact</li>
-  <li>home</li>
-  <li>page</li>
-  <li>rental</li>
-  <li>search</li>
-</ul>
-
-<p>Works with suffixes: <code>path</code> and <code>url</code>.</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>debug</td>
+      <td>Boolean</td>
+      <td>
+<a href="introduction/index.html">Debug mode</a>. Default = 0</td>
+    </tr>
+  </tbody>
+</table>
 
               </div>
             </div>

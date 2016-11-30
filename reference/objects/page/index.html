@@ -110,6 +110,10 @@
     <div class="list-group">
       <a class="list-group-item" href="/reference/templates/introduction">Introduction</a>
       <a class="list-group-item" href="/reference/templates/index">index.liquid</a>
+      <a class="list-group-item" href="/reference/templates/page">page.liquid</a>
+      <a class="list-group-item" href="/reference/templates/rental">rental.liquid</a>
+      <a class="list-group-item" href="/reference/templates/search">search.liquid</a>
+      <a class="list-group-item" href="/reference/templates/404">404.liquid</a>
     </div>
     <div class="panel-heading">
       <h3 class="panel-title">Filters</h3>
@@ -152,12 +156,42 @@
 
 <p>Available attributes:</p>
 
-<ul>
-  <li>title</li>
-  <li>content</li>
-  <li>page_title</li>
-  <li>page_description</li>
-</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>content</td>
+      <td>String</td>
+      <td>page’s content</td>
+    </tr>
+    <tr>
+      <td>handle</td>
+      <td>String</td>
+      <td>page’s handle. This is the page’s title in lowercase with any spaces and special characters replaced by hyphens (-).</td>
+    </tr>
+    <tr>
+      <td>page_title</td>
+      <td>String</td>
+      <td>used inside title</td>
+    </tr>
+    <tr>
+      <td>page_description</td>
+      <td>String</td>
+      <td>used inside meta description</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>String</td>
+      <td>page’s title</td>
+    </tr>
+  </tbody>
+</table>
 
               </div>
             </div>
