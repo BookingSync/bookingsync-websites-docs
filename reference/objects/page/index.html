@@ -149,12 +149,17 @@
 
 <p>Returns attributes of page.</p>
 
-<h5 id="example">Example</h5>
+<h3 id="example">Example</h3>
 
-<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">rental</span><span class="p">.</span><span class="nv">page_title</span><span class="w"> </span><span class="p">%}</span>
-    <span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">page_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>rental.page_title<span class="w"> </span><span class="p">%}</span></code></pre>
+<p>For a page with the title <code>About us</code>:</p>
 
-<p>Available attributes:</p>
+<h4 id="input">Input</h4>
+<pre><code class="language-liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">handle</span><span class="w"> </span><span class="p">}}</span></code></pre>
+
+<h4 id="output">Output</h4>
+<pre><code class="language-html">about-us</code></pre>
+
+<h3 id="available-attributes">Available attributes:</h3>
 
 <table class="table table-bordered">
   <thead>
