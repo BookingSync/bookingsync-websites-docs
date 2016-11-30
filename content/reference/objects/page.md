@@ -2,14 +2,21 @@
 
 Returns attributes of page.
 
-#### Example
+## Example
 
+For a page with the title `About us`:
+
+### Input
 ~~~ liquid
-  {% if rental.page_title %}
-    {% assign page_title = rental.page_title %}
+{{ page.handle }}
 ~~~
 
-Available attributes:
+### Output
+~~~html
+about-us
+~~~
+
+## Available attributes:
 
 Name             | Type       | Description
 -----------------|------------|------------
