@@ -10,7 +10,10 @@ Returns attributes for active locale.
 
 Available attributes:
 
-* code
-* name
-* url
-* current
+Name    | Type    | Description
+--------|-------- |------------
+code    | String  | locale's code
+name    | String  | locale's name
+url     | String  | locale's url
+current | Boolean | check if locale is current or not
+{: class="table table-bordered"}

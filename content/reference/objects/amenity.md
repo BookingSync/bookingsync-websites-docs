@@ -16,7 +16,10 @@ Gives you access to all amenities and their attributes.
 
 Available attributes:
 
-* available
-* id
-* name
-* selected
+Name      | Type    | Description
+----------|---------|------------
+available | Boolean | if amenity is available or not
+id        | String  | amenity uniq identifier
+name      | String  | translated amenity name
+selected  | Boolean | if amenity is selected or not
+{: class="table table-bordered"}

@@ -1,3 +1,4 @@
+
 # Review
 
 Returns review attributes.
@@ -17,9 +18,12 @@ Returns review attributes.
 
 Available attributes:
 
-* comment
-* created_at
-* id
-* name
-* rating
-* title
+Name       | Type    | Description
+-----------|---------|------------
+comment    | String  | review's comment
+created_at | Date    | review's date
+id         | Integer | review's id
+name       | String  | reviewer's name
+rating     | Integer | review's rating. Maximum value is 5.
+title      | String  | review's title
+{: class="table table-bordered"}

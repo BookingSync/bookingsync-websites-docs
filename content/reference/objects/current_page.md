@@ -10,7 +10,10 @@ Returns attributes for current page.
 
 Available attributes:
 
-* action
-* controller
-* path
-* url
+Name       | Type   | Description
+-----------|--------|------------
+action     | String | current page's action
+controller | String | current page's controller
+path       | String | current page's path
+url        | String | current page's url
+{: class="table table-bordered"}

@@ -2,11 +2,14 @@
 
 Available attributes:
 
-* available_bed_kinds <small>_(aliases as "bed_kinds")_</small>
-* bunk_beds_count
-* double_beds_count
-* kingsize_beds_count
-* name
-* queensize_beds_count
-* single_beds_count
-* sofa_beds_count
+Name                            | Type       | Description
+--------------------------------|------------|------------
+available_bed_kinds / bed_kinds | Collection | collection of beds
+bunk_beds_count                 | Integer    | number of bunk bed
+double_beds_count               | Integer    | number of double bed
+kingsize_beds_count             | Integer    | number of kingsize
+name                            | String     | name of bedroom
+queensize_beds_count            | Integer    | number of queensize
+single_beds_count               | Integer    | number of single bed
+sofa_beds_count                 | Integer    | number of sofa bed
+{: class="table table-bordered"}

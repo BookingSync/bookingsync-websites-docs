@@ -10,5 +10,8 @@ Returns today and tomorrow dates.
 
 Available attributes:
 
-* today
-* tomorrow
+Name     | Type | Description
+---------|------|------------
+today    | Date | today date
+tomorrow | Date | tomorrow date
+{: class="table table-bordered"}

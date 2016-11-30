@@ -10,7 +10,10 @@ Returns attributes for rental location.
 
 Available attributes:
 
-* city
-* country
-* lat
-* lng
+Name    | Type    | Description
+--------|-------- |------------
+city    | String  | location's city
+country | String  | location's country
+lat     | String  | location's latitude
+lng     | String  | location's longitude
+{: class="table table-bordered"}
