@@ -2,13 +2,22 @@
 
 Returns a `Menu` object for each visible menus.
 
-#### Example
+## Example
+
+This will return all the menu items from the menu having the handle `main`.
 
 ~~~ liquid
+<ul>
   {% for item in menus.main.items %}
-    <a href="{{ item.url }}">{{ item.title }}</a>
+    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+  {% endfor %}
+</ul>
 ~~~
 
-Available attributes:
+## Available attributes
 
-* *menu_name*
+Name   | Type       | Description
+-------|------------|------------
+all    | Collection | collection of all menus
+menu-handle*  | Menu       | returns the menu matching the given handle
+{: class="table table-bordered"}
