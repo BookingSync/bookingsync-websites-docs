@@ -12,11 +12,11 @@ For a page with the title `About us`:
 ~~~
 
 ### Output
-~~~html
+~~~ html
 about-us
 ~~~
 
-## Available attributes:
+## Available attributes
 
 Name             | Type       | Description
 -----------------|------------|------------
