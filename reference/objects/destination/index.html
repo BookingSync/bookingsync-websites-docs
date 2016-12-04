@@ -149,31 +149,84 @@
 
 <p>Returns attributes for selected <code>Destination</code>, for example in search bar.</p>
 
-<h5 id="example">Example</h5>
+<h3 id="example">Example</h3>
 
-<pre><code class="language-liquid">  &lt;option
-    <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">destination</span><span class="p">.</span><span class="nv">selected</span><span class="w"> </span><span class="p">%}</span>
-      selected="selected"
-    <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
-    value="<span class="p">{{</span><span class="w"> </span><span class="nv">destination</span><span class="p">.</span><span class="nv">id</span><span class="w"> </span><span class="p">}}</span>"&gt;
-    <span class="p">{{</span><span class="w"> </span><span class="nv">destination</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span> (<span class="p">{{</span><span class="w"> </span><span class="nv">destination</span><span class="p">.</span><span class="nv">count</span><span class="w"> </span><span class="p">}}</span>)
-  &lt;/option&gt;</code></pre>
+<pre><code class="language-liquid">&lt;option
+  <span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">destination</span><span class="p">.</span><span class="nv">selected</span><span class="w"> </span><span class="p">%}</span>
+    selected="selected"
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
+  value="<span class="p">{{</span><span class="w"> </span><span class="nv">destination</span><span class="p">.</span><span class="nv">id</span><span class="w"> </span><span class="p">}}</span>"&gt;
+  <span class="p">{{</span><span class="w"> </span><span class="nv">destination</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span> (<span class="p">{{</span><span class="w"> </span><span class="nv">destination</span><span class="p">.</span><span class="nv">count</span><span class="w"> </span><span class="p">}}</span>)
+&lt;/option&gt;</code></pre>
 
-<p>Available attributes:</p>
+<h3 id="available-attributes">Available attributes</h3>
 
-<ul>
-  <li>ancestors</li>
-  <li>children</li>
-  <li>id</li>
-  <li>name</li>
-  <li>count</li>
-  <li>content</li>
-  <li>parent</li>
-  <li>photos</li>
-  <li>selected</li>
-  <li>title</li>
-  <li>url</li>
-</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ancestors</td>
+      <td>Collection</td>
+      <td>destination’s ancestors</td>
+    </tr>
+    <tr>
+      <td>children</td>
+      <td>Collection</td>
+      <td>destination’s children destination</td>
+    </tr>
+    <tr>
+      <td>content</td>
+      <td>String</td>
+      <td>destination’s content</td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>Interger</td>
+      <td>number of rentals within this destination</td>
+    </tr>
+    <tr>
+      <td>handle</td>
+      <td>String</td>
+      <td>destination’s handle. This is the destination’s title in lowercase with any spaces and special characters replaced by hyphens (-).</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>Integer</td>
+      <td>destination’s uniq identifier</td>
+    </tr>
+    <tr>
+      <td>parent</td>
+      <td>Destination</td>
+      <td>destination’s parent destination</td>
+    </tr>
+    <tr>
+      <td>photos</td>
+      <td>Collection</td>
+      <td>collection of all destination’s photos</td>
+    </tr>
+    <tr>
+      <td>selected</td>
+      <td>Boolean</td>
+      <td>defined if a destination is currently selected or not</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>String</td>
+      <td>destination’s title</td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td>String</td>
+      <td>destination’s URL</td>
+    </tr>
+  </tbody>
+</table>
 
               </div>
             </div>

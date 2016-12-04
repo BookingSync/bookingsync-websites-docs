@@ -149,11 +149,11 @@
 
 <p>Gives you access to attributes of <code>Category</code>.</p>
 
-<h5 id="example">Example</h5>
+<h3 id="example">Example</h3>
 
-<pre><code class="language-liquid">  &lt;h2&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/h2&gt;</code></pre>
+<pre><code class="language-liquid">&lt;h2&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/h2&gt;</code></pre>
 
-<p>Available attributes:</p>
+<h3 id="available-attributes">Available attributes</h3>
 
 <table class="table table-bordered">
   <thead>
@@ -168,6 +168,11 @@
       <td>content</td>
       <td>String</td>
       <td>category’s content</td>
+    </tr>
+    <tr>
+      <td>handle</td>
+      <td>String</td>
+      <td>category’s handle. This is the category’s title in lowercase with any spaces and special characters replaced by hyphens (-).</td>
     </tr>
     <tr>
       <td>page_title</td>
@@ -197,7 +202,7 @@
     <tr>
       <td>url</td>
       <td>String</td>
-      <td>category’s url</td>
+      <td>category’s URL</td>
     </tr>
   </tbody>
 </table>

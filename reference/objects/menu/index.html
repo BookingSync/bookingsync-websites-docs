@@ -149,11 +149,11 @@
 
 <p>Returns created menu items Array ordered by position.</p>
 
-<h5 id="example">Example</h5>
+<h3 id="example">Example</h3>
 
-<pre><code class="language-liquid">  <span class="p">{{</span><span class="w"> </span><span class="nv">menu</span><span class="p">.</span><span class="nv">items</span><span class="w"> </span><span class="p">}}</span></code></pre>
+<pre><code class="language-liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">menu</span><span class="p">.</span><span class="nv">handle</span><span class="w"> </span><span class="p">}}</span></code></pre>
 
-<p>Available attributes:</p>
+<h3 id="available-attributes">Available attributes</h3>
 
 <table class="table table-bordered">
   <thead>
@@ -164,6 +164,11 @@
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>handle</td>
+      <td>String</td>
+      <td>menu’s handle. This is the menu’s title in lowercase with any spaces and special characters replaced by hyphens (-).</td>
+    </tr>
     <tr>
       <td>items</td>
       <td>Collection</td>

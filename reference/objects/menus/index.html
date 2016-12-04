@@ -149,16 +149,39 @@
 
 <p>Returns a <code>Menu</code> object for each visible menus.</p>
 
-<h5 id="example">Example</h5>
+<h3 id="example">Example</h3>
 
-<pre><code class="language-liquid">  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>menus.main.items<span class="w"> </span><span class="p">%}</span>
-    &lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;</code></pre>
+<p>This will return all the menu items from the menu having the handle <code>main</code>.</p>
 
-<p>Available attributes:</p>
+<pre><code class="language-liquid">&lt;ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>menus.main.items<span class="w"> </span><span class="p">%}</span>
+    &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;</code></pre>
 
-<ul>
-  <li><em>menu_name</em></li>
-</ul>
+<h3 id="available-attributes">Available attributes</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>all</td>
+      <td>Collection</td>
+      <td>collection of all menus</td>
+    </tr>
+    <tr>
+      <td>menu-handle*</td>
+      <td>Menu</td>
+      <td>returns the menu matching the given handle</td>
+    </tr>
+  </tbody>
+</table>
 
               </div>
             </div>
