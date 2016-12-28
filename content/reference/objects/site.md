@@ -25,6 +25,7 @@ Available attributes:
 * email
 * fax
 * google_analytics
+* google_api_key
 * home_page_title
 * home_page_description
 * host
