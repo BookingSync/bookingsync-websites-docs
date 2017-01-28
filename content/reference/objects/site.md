@@ -30,7 +30,7 @@ Available attributes:
 * host
 * host_with_port
 * locale
-* maptimize_key
+* maptimize_key (deprecated)
 * mobile
 * name
 * not_found_page_title
