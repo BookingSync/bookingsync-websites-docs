@@ -35,6 +35,9 @@ Available attributes:
 * lng
 * location
 * name
+* nightly_base_rate
+* nightly_min_price
+* nightly_max_price
 * photo_center_height
 * photos
 * position
@@ -56,3 +59,6 @@ Available attributes:
 * url
 * vr_bathrooms_count
 * website_id
+* weekly_base_rate
+* weekly_min_price
+* weekly_max_price
