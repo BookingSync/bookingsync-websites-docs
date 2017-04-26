@@ -23,14 +23,17 @@ Available attributes:
 * bookable_online
 * bookingsync_id
 * bookingsync_account_id
+* bunk_beds_count
 * cache_key
 * currency
 * destination
+* double_beds_count
 * final_price
 * full_bathrooms_count
 * headline
 * id
 * initial_price
+* kingsize_beds_count
 * lat
 * lng
 * location
@@ -42,12 +45,15 @@ Available attributes:
 * photos
 * position
 * price_kind
+* queensize_beds_count
 * reference
 * reviews_average_rating <small>_(aliases as "rating")_</small>
 * reviews_count
 * search_price
+* single_beds_count
 * sleeps
 * sleeps_max
+* sofa_beds_count
 * special_offers
 * standalone_toilets_count
 * summary
