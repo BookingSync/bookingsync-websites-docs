@@ -14,6 +14,7 @@ Name             | Type       | Description
 -----------------|------------|------------
 content          | String     | category's content
 handle           | String     | category's handle. This is the category's title in lowercase with any spaces and special characters replaced by hyphens (-).
+id               | Integer    | category's id
 page_title       | String     | used inside title
 page_description | String     | used inside meta description
 photos           | Collection | collection of all published photos
