@@ -5,7 +5,7 @@ Returns attributes for available currencies.
 #### Example
 
 ~~~ liquid
-  {{ currencies.current.iso_code }}
+{{ currencies.current.iso_code }}
 ~~~
 
 Available attributes:
