@@ -23,6 +23,7 @@ Available attributes:
 * inquire_url
 * page_title
 * page_description
+* permit_number
 * price_public_notes
 * rental_type
 * reviews
