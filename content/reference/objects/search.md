@@ -5,11 +5,11 @@ Return search for rentals.
 #### Example
 
 ~~~ liquid
-  {% for rental in search.rentals %}
-    <div class="col-sm-4">
-      {% include 'snippets/rental_preview' %}
-    </div>
-  {% endfor %}
+{% for rental in search.rentals %}
+  <div class="col-sm-4">
+    {% include 'snippets/rental_preview' %}
+  </div>
+{% endfor %}
 ~~~
 
 Available attributes:

@@ -5,9 +5,9 @@ Returns information about active rate
 #### Example
 
 ~~~ liquid
-  {% for rate in rental.rates %}
-    {{ rate.initial_nightly_rate }}
-  {% endfor %}
+{% for rate in rental.rates %}
+  {{ rate.initial_nightly_rate }}
+{% endfor %}
 ~~~
 
 Available attributes:

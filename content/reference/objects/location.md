@@ -5,7 +5,7 @@ Returns attributes for rental location.
 #### Example
 
 ~~~ liquid
-  <p>{{ rental.destination.name }}, {{ rental.location.country }}</p>
+<p>{{ rental.destination.name }}, {{ rental.location.country }}</p>
 ~~~
 
 Available attributes:

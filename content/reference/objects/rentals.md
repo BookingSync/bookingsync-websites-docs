@@ -5,9 +5,9 @@ Returns promoted rentals for current website.
 #### Example
 
 ~~~ liquid
-  {% for rental in rentals.promoted %}
-  ...
-  {% endfor %}
+{% for rental in rentals.promoted %}
+...
+{% endfor %}
 ~~~
 
 Available attributes:

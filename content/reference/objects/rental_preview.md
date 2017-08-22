@@ -5,13 +5,13 @@ Return attributes for rental preview.
 #### Example
 
 ~~~ liquid
-  {% if rental.special_offers %}
-    <ul class="list-unstyled special_offers">
-      {% for special_offer in rental.special_offers %}
-        {% include 'snippets/rental_special_offer' %}
-      {% endfor %}
-    </ul>
-  {% endif %}
+{% if rental.special_offers %}
+  <ul class="list-unstyled special_offers">
+    {% for special_offer in rental.special_offers %}
+      {% include 'snippets/rental_special_offer' %}
+    {% endfor %}
+  </ul>
+{% endif %}
 ~~~
 
 Available attributes:

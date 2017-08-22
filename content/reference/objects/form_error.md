@@ -5,7 +5,7 @@ Allows to check and show Form errors.
 #### Example
 
 ~~~ liquid
-  {{ error.messages }}
+{{ error.messages }}
 ~~~
 
 Available attributes:

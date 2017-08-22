@@ -5,17 +5,17 @@ Return attributes for search form.
 #### Example
 
 ~~~ liquid
-  <select class="select optional form-control chosen-select" data-placeholder="{% t 'search.form.destination' %}" id="search_destination" multiple="multiple" name="destination[]" placeholder="{% t 'search.form.destination' %}">
-    {% for destination in search_form.destinations %}
-      <option
-        {% if destination.selected %}
-          selected="selected"
-        {% endif %}
-        value="{{ destination.id }}">
-        {{ destination.name }} ({{ destination.count }})
-      </option>
-    {% endfor %}
-  </select>
+<select class="select optional form-control chosen-select" data-placeholder="{% t 'search.form.destination' %}" id="search_destination" multiple="multiple" name="destination[]" placeholder="{% t 'search.form.destination' %}">
+  {% for destination in search_form.destinations %}
+    <option
+      {% if destination.selected %}
+        selected="selected"
+      {% endif %}
+      value="{{ destination.id }}">
+      {{ destination.name }} ({{ destination.count }})
+    </option>
+  {% endfor %}
+</select>
 ~~~
 
 Available attributes:
