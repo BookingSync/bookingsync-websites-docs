@@ -14,6 +14,7 @@ Available paths:
 * contact
 * home
 * page
+* password
 * rental
 * search
 

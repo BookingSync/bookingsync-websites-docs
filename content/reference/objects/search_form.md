@@ -20,21 +20,20 @@ Return attributes for search form.
 
 Available attributes:
 
+* absolute_max_price
+* absolute_min_price
 * amenities
 * basic_amenities
+* bedrooms_range
 * checkin
 * checkout
 * currency
 * destinations
-* root_destinations
-* primary_destinations
-* selected_destinations
-* selected_root_destinations
-* selected_primary_destinations
 * display_name
-* dislay_type
+* display_type
 * guests
 * guests_choices
+* instantly_bookable?
 * length_of_stay
 * min_price
 * min_price_for_stay
@@ -43,9 +42,17 @@ Available attributes:
 * nightly_min_price
 * nightly_max_price
 * length_of_stay
-* rentals_tags
+* primary_destinations
 * rental_types
-* search_url
+* rentals
+* rentals_tags
+* root_destinations
+* selected_destinations
+* selected_primary_destinations
+* selected_rate
 * selected_rentals_tags
+* selected_root_destinations
+* search_url
 * sort_by
 * sort_choices
+* website

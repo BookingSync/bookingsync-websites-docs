@@ -17,6 +17,7 @@ Available attributes:
 * display_type
 * display_list_url
 * display_map_url
+* get_destination_ids
 * max_latitude
 * max_longitude
 * min_latitude

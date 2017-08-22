@@ -19,7 +19,8 @@ Available attributes:
 Name      | Type    | Description
 ----------|---------|------------
 available | Boolean | if amenity is available or not
+details   | String  | translated amenity's details
 id        | String  | amenity uniq identifier
-name      | String  | translated amenity name
+name      | String  | translated amenity's name
 selected  | Boolean | if amenity is selected or not
 {: class="table table-bordered"}

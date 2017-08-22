@@ -12,6 +12,7 @@ Returns promoted rentals for current website.
 
 Available attributes:
 
+* all
 * max_latitude
 * min_latitude
 * max_longitude
