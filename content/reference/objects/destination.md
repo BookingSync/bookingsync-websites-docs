@@ -24,6 +24,8 @@ content          | String      | destination's content
 count            | Interger    | number of rentals within this destination
 handle           | String      | destination's handle. This is the destination's title in lowercase with any spaces and special characters replaced by hyphens (-).
 id               | Integer     | destination's uniq identifier
+page_title       | String      | destination's page title
+page_description | String      | destination's page description
 parent           | Destination | destination's parent destination
 photos           | Collection  | collection of all destination's photos
 selected         | Boolean     | defined if a destination is currently selected or not

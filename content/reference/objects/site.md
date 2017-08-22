@@ -5,9 +5,9 @@ Return attributes for website.
 #### Example
 
 ~~~ liquid
-  <a class="navbar-brand" href="/">
-    {{ site.name }}
-  </a>
+<a class="navbar-brand" href="/">
+  {{ site.name }}
+</a>
 ~~~
 
 Available attributes:

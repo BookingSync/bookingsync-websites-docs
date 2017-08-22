@@ -5,9 +5,9 @@ Allows to iterate through all `Categories` in the website. They are sorted by po
 #### Example
 
 ~~~ liquid
-  {% if categories.all.size > 0 %}
-    {% for category in categories.all %}
-  ...
+{% if categories.all.size > 0 %}
+  {% for category in categories.all %}
+...
 ~~~
 
 Available attributes:

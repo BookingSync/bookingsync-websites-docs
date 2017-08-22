@@ -5,19 +5,21 @@ Return attributes for rental preview.
 #### Example
 
 ~~~ liquid
-  {% if rental.special_offers %}
-    <ul class="list-unstyled special_offers">
-      {% for special_offer in rental.special_offers %}
-        {% include 'snippets/rental_special_offer' %}
-      {% endfor %}
-    </ul>
-  {% endif %}
+{% if rental.special_offers %}
+  <ul class="list-unstyled special_offers">
+    {% for special_offer in rental.special_offers %}
+      {% include 'snippets/rental_special_offer' %}
+    {% endfor %}
+  </ul>
+{% endif %}
 ~~~
 
 Available attributes:
 
 * absolute_min_price
 * amenities
+* available?
+* base_rate
 * bathrooms_count
 * bedrooms_count
 * bookable_online
@@ -44,9 +46,11 @@ Available attributes:
 * photo_center_height
 * photos
 * position
+* priced?
 * price_kind
 * queensize_beds_count
 * reference
+* rental_type
 * reviews_average_rating <small>_(aliases as "rating")_</small>
 * reviews_count
 * search_price
@@ -61,6 +65,12 @@ Available attributes:
 * surface_unit
 * surface_with_unit
 * tags
+* total_bunk_beds_count
+* total_double_beds_count
+* total_kingsize_beds_count
+* total_queensize_beds_count
+* total_single_beds_count
+* total_sofa_beds_count
 * updated_at
 * url
 * vr_bathrooms_count

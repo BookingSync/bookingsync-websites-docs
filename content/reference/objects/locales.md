@@ -5,7 +5,7 @@ Returns attributes for available locales.
 #### Example
 
 ~~~ liquid
-  {{ locales.current.name }}
+{{ locales.current.name }}
 ~~~
 
 Available attributes:
