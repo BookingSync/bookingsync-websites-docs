@@ -79,13 +79,13 @@
       <a class="list-group-item" href="/reference/objects/destination_locales/">Destination Locales</a>
       <a class="list-group-item" href="/reference/objects/form_error/">Form Error</a>
       <a class="list-group-item" href="/reference/objects/guest/">Guest</a>
-      <a class="list-group-item" href="/reference/objects/living_room/">Living Room</a>
+      <a class="list-group-item active" href="/reference/objects/living_room/">Living Room</a>
       <a class="list-group-item" href="/reference/objects/locale/">Locale</a>
       <a class="list-group-item" href="/reference/objects/locales/">Locales</a>
       <a class="list-group-item" href="/reference/objects/location/">Location</a>
       <a class="list-group-item" href="/reference/objects/menu/">Menu</a>
       <a class="list-group-item" href="/reference/objects/menu_item/">Menu Item</a>
-      <a class="list-group-item active" href="/reference/objects/menus/">Menus</a>
+      <a class="list-group-item" href="/reference/objects/menus/">Menus</a>
       <a class="list-group-item" href="/reference/objects/page/">Page</a>
       <a class="list-group-item" href="/reference/objects/page_locale/">Page Locale</a>
       <a class="list-group-item" href="/reference/objects/page_locales/">Page Locales</a>
@@ -149,21 +149,9 @@
           <div class="col-md-9 col-md-pull-3">
             <div class="panel panel-default">
               <div class="panel-body reference-body">
-                <h2 id="menus">Menus</h2>
+                <h2 id="living-room">Living room</h2>
 
-<p>Returns a <code>Menu</code> object for each visible menus.</p>
-
-<h3 id="example">Example</h3>
-
-<p>This will return all the menu items from the menu having the handle <code>main</code>.</p>
-
-<pre><code class="language-liquid">&lt;ul&gt;
-  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>menus.main.items<span class="w"> </span><span class="p">%}</span>
-    &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
-  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
-&lt;/ul&gt;</code></pre>
-
-<h3 id="available-attributes">Available attributes</h3>
+<p>Available attributes:</p>
 
 <table class="table table-bordered">
   <thead>
@@ -175,14 +163,39 @@
   </thead>
   <tbody>
     <tr>
-      <td>all</td>
+      <td>available_bed_kinds / bed_kinds</td>
       <td>Collection</td>
-      <td>collection of all menus</td>
+      <td>collection of beds</td>
     </tr>
     <tr>
-      <td>menu-handle*</td>
-      <td>Menu</td>
-      <td>returns the menu matching the given handle</td>
+      <td>bunk_beds_count</td>
+      <td>Integer</td>
+      <td>number of bunk bed</td>
+    </tr>
+    <tr>
+      <td>double_beds_count</td>
+      <td>Integer</td>
+      <td>number of double bed</td>
+    </tr>
+    <tr>
+      <td>kingsize_beds_count</td>
+      <td>Integer</td>
+      <td>number of kingsize</td>
+    </tr>
+    <tr>
+      <td>queensize_beds_count</td>
+      <td>Integer</td>
+      <td>number of queensize</td>
+    </tr>
+    <tr>
+      <td>single_beds_count</td>
+      <td>Integer</td>
+      <td>number of single bed</td>
+    </tr>
+    <tr>
+      <td>sofa_beds_count</td>
+      <td>Integer</td>
+      <td>number of sofa bed</td>
     </tr>
   </tbody>
 </table>

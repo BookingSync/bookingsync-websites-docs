@@ -85,11 +85,11 @@
       <a class="list-group-item" href="/reference/objects/location/">Location</a>
       <a class="list-group-item" href="/reference/objects/menu/">Menu</a>
       <a class="list-group-item" href="/reference/objects/menu_item/">Menu Item</a>
-      <a class="list-group-item active" href="/reference/objects/menus/">Menus</a>
+      <a class="list-group-item" href="/reference/objects/menus/">Menus</a>
       <a class="list-group-item" href="/reference/objects/page/">Page</a>
       <a class="list-group-item" href="/reference/objects/page_locale/">Page Locale</a>
       <a class="list-group-item" href="/reference/objects/page_locales/">Page Locales</a>
-      <a class="list-group-item" href="/reference/objects/rate/">Rate</a>
+      <a class="list-group-item active" href="/reference/objects/rate/">Rate</a>
       <a class="list-group-item" href="/reference/objects/rental/">Rental</a>
       <a class="list-group-item" href="/reference/objects/rental_amenities/">Rental Amenities</a>
       <a class="list-group-item" href="/reference/objects/rental_photo/">Rental Photo</a>
@@ -149,21 +149,17 @@
           <div class="col-md-9 col-md-pull-3">
             <div class="panel panel-default">
               <div class="panel-body reference-body">
-                <h2 id="menus">Menus</h2>
+                <h2 id="rate">Rate</h2>
 
-<p>Returns a <code>Menu</code> object for each visible menus.</p>
+<p>Returns information about active rate</p>
 
-<h3 id="example">Example</h3>
+<h5 id="example">Example</h5>
 
-<p>This will return all the menu items from the menu having the handle <code>main</code>.</p>
+<pre><code class="language-liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>rate<span class="w"> </span>in<span class="w"> </span>rental.rates<span class="w"> </span><span class="p">%}</span>
+  <span class="p">{{</span><span class="w"> </span><span class="nv">rate</span><span class="p">.</span><span class="nv">initial_nightly_rate</span><span class="w"> </span><span class="p">}}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre>
 
-<pre><code class="language-liquid">&lt;ul&gt;
-  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>menus.main.items<span class="w"> </span><span class="p">%}</span>
-    &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
-  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
-&lt;/ul&gt;</code></pre>
-
-<h3 id="available-attributes">Available attributes</h3>
+<p>Available attributes:</p>
 
 <table class="table table-bordered">
   <thead>
@@ -175,14 +171,29 @@
   </thead>
   <tbody>
     <tr>
-      <td>all</td>
-      <td>Collection</td>
-      <td>collection of all menus</td>
+      <td>initial_nightly_rate</td>
+      <td>Integer</td>
+      <td>rate’s initial_nightly_rate</td>
     </tr>
     <tr>
-      <td>menu-handle*</td>
-      <td>Menu</td>
-      <td>returns the menu matching the given handle</td>
+      <td>initial_weekly_rate</td>
+      <td>Integer</td>
+      <td>rate’s initial_weekly_rate</td>
+    </tr>
+    <tr>
+      <td>initial_monthly_rate</td>
+      <td>Integer</td>
+      <td>rate’s initial_monthly_rate</td>
+    </tr>
+    <tr>
+      <td>start_date</td>
+      <td>Date</td>
+      <td>rate’s start_date</td>
+    </tr>
+    <tr>
+      <td>end_date</td>
+      <td>Date</td>
+      <td>rate’s end_date</td>
     </tr>
   </tbody>
 </table>

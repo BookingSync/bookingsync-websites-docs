@@ -72,7 +72,7 @@
       <a class="list-group-item" href="/reference/objects/contact_request/">Contact Request</a>
       <a class="list-group-item" href="/reference/objects/context/">Context</a>
       <a class="list-group-item" href="/reference/objects/currencies/">Currencies</a>
-      <a class="list-group-item" href="/reference/objects/currency/">Currency</a>
+      <a class="list-group-item active" href="/reference/objects/currency/">Currency</a>
       <a class="list-group-item" href="/reference/objects/current_page/">Current Page</a>
       <a class="list-group-item" href="/reference/objects/destination/">Destination</a>
       <a class="list-group-item" href="/reference/objects/destination_locale/">Destination Locale</a>
@@ -85,7 +85,7 @@
       <a class="list-group-item" href="/reference/objects/location/">Location</a>
       <a class="list-group-item" href="/reference/objects/menu/">Menu</a>
       <a class="list-group-item" href="/reference/objects/menu_item/">Menu Item</a>
-      <a class="list-group-item active" href="/reference/objects/menus/">Menus</a>
+      <a class="list-group-item" href="/reference/objects/menus/">Menus</a>
       <a class="list-group-item" href="/reference/objects/page/">Page</a>
       <a class="list-group-item" href="/reference/objects/page_locale/">Page Locale</a>
       <a class="list-group-item" href="/reference/objects/page_locales/">Page Locales</a>
@@ -149,21 +149,15 @@
           <div class="col-md-9 col-md-pull-3">
             <div class="panel panel-default">
               <div class="panel-body reference-body">
-                <h2 id="menus">Menus</h2>
+                <h2 id="currency">Currency</h2>
 
-<p>Returns a <code>Menu</code> object for each visible menus.</p>
+<p>Returns attributes for active currency.</p>
 
-<h3 id="example">Example</h3>
+<h5 id="example">Example</h5>
 
-<p>This will return all the menu items from the menu having the handle <code>main</code>.</p>
+<pre><code class="language-liquid">&lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">currency</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">currency</span><span class="p">.</span><span class="nv">iso_code</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;</code></pre>
 
-<pre><code class="language-liquid">&lt;ul&gt;
-  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>item<span class="w"> </span>in<span class="w"> </span>menus.main.items<span class="w"> </span><span class="p">%}</span>
-    &lt;li&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/li&gt;
-  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
-&lt;/ul&gt;</code></pre>
-
-<h3 id="available-attributes">Available attributes</h3>
+<p>Available attributes:</p>
 
 <table class="table table-bordered">
   <thead>
@@ -175,14 +169,24 @@
   </thead>
   <tbody>
     <tr>
-      <td>all</td>
-      <td>Collection</td>
-      <td>collection of all menus</td>
+      <td>current?</td>
+      <td>Boolean</td>
+      <td>check if currency is current or not</td>
     </tr>
     <tr>
-      <td>menu-handle*</td>
-      <td>Menu</td>
-      <td>returns the menu matching the given handle</td>
+      <td>iso_code</td>
+      <td>String</td>
+      <td>currency’s iso_code</td>
+    </tr>
+    <tr>
+      <td>symbol</td>
+      <td>String</td>
+      <td>currency’s name</td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td>String</td>
+      <td>currency’s url</td>
     </tr>
   </tbody>
 </table>
