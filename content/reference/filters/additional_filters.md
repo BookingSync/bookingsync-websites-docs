@@ -17,49 +17,6 @@ Encodes string as an url.
   Super%20Headline
 ~~~
 
-## rental_photo_url
-
-Insterts `img` tag with link to the given size.
-
-#### Input
-
-~~~ html
-  <img src='{{ photo | rental_photo_url: 'large' }} 1200w' >
-~~~
-
-#### Output
-
-~~~ html
-  <img src='.../image/upload/c_fill,fl_progressive,g_center,h_800,q_90,w_1200/v1436964916/uw5bsnqqbkwtxfqocbjd.jpg 1200w' >
-~~~
-
-<br>
-
-List of sizes:
-
-<br>
-<div class='tab-content' markdown='1'>
-  <div class='tab-pane active' id='public' markdown='1'>
-   Name    | Size
-:---------:|:-------:
-  compact  |  384w
------------|---------
-  medium   |  768w
------------|---------
-  large    | 1200w
------------|---------
-  grande   | 1536w
------------|---------
-  giant    | 2400w
------------|---------
-{: class="table table-bordered"}
-  </div>
-</div>
-
-## category_photo_url
-
-Similiar to `rental_photo_url`.
-
 ## convert_stars
 
 Converts rental rating to be used as star rating.
