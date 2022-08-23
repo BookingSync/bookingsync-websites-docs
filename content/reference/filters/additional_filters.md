@@ -32,6 +32,22 @@ Converts a string, or object, into JSON format.
   ]
 ~~~
 
+## url_params
+
+Adds or replace a parameter in a url.
+
+#### Input
+
+~~~ liquid
+  {{ current_page.url | url_params: 'page', '2' }}
+~~~
+
+#### Output
+
+~~~
+  example.com/fr/rentals/search?page=2
+~~~
+
 ## url_encode
 
 Encodes string as an url.
