@@ -1,5 +1,37 @@
 # Additional Filters
 
+## json
+
+Converts a string, or object, into JSON format.
+
+> When using the JSON output in JavaScript, you don't need to wrap it in quotes because the `json` filter includes them. The `json` filter also escapes any quotes inside the output.
+
+#### Input
+
+~~~ liquid
+  <script>
+    console.log({{ rental.photos | json }});
+  </script>
+~~~
+
+#### Output
+
+~~~ json
+  [
+    "https://res-3.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_800,q_auto,w_1200/v1588198127/qip_2528f121-9cce-4bb3-96bd-d26f72c19543.jpg",
+    "https://res-4.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_800,q_auto,w_1200/v1588197588/qip_fc3e593b-4f97-4101-8991-eaa57c334158.jpg",
+    "https://res-4.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_800,q_auto,w_1200/v1523640153/home_qip_qagssw.jpg",
+    "https://res-5.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_800,q_auto,w_1200/v1503932905/Image_qip_lczrgv.jpg",
+    "https://res-1.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_800,q_auto,w_1200/v1517504669/104_bd_croisette_06-min_qip_ke8efj.jpg",
+    "https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_800,q_auto,w_1200/v1498585772/bookingsync_sample_rental_photo_6_qip_ymrfjt.jpg",
+    "https://res-2.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_800,q_auto,w_1200/v1498585773/bookingsync_sample_rental_photo_8_qip_ukq58h.jpg",
+    "https://res-5.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_800,q_auto,w_1200/v1498585774/bookingsync_sample_rental_photo_3_qip_qwggxg.jpg",
+    "https://res-2.cloudinary.com/bookingsync/image/upload/c_fit,f_auto,fl_progressive,h_800,q_auto,w_1200/v1498585775/bookingsync_sample_rental_photo_10_qip_oaufvq.jpg",
+    "https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_800,q_auto,w_1200/v1498585776/bookingsync_sample_rental_photo_1_qip_tx4qv9.jpg",
+    "https://res-2.cloudinary.com/bookingsync/image/upload/c_fill,f_auto,fl_progressive,g_center,h_800,q_auto,w_1200/v1498585777/bookingsync_sample_rental_photo_4_qip_rtc9ri.jpg"
+  ]
+~~~
+
 ## url_encode
 
 Encodes string as an url.
@@ -8,7 +40,7 @@ Encodes string as an url.
 
 ~~~ liquid
   <!-- Rental Headline = "Super Headline" -->
-    {{ rental.headline | url_encode }}
+  {{ rental.headline | url_encode }}
 ~~~
 
 #### Output
