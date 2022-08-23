@@ -81,7 +81,7 @@ When using the `for` parameter, the [forloop](/reference/tags/iteration_tags/#fo
 
 ## include
 
-The `include` tag is deprecated; please use render instead.
+The `include` tag is deprecated; please use [render](/reference/tags/theme_tags/#render) instead.
 
 ## form
 
