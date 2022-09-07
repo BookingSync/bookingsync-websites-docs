@@ -125,4 +125,4 @@ Creates a new number variable, and decreases its value by one every time it is c
 
 <br>
 
-Like [increment](/tags/variable_tags#increment), variables declared inside `decrement` are independent from variables created through `assign` or `capture`.
+Like [increment](/reference/tags/variable_tags#increment), variables declared inside `decrement` are independent from variables created through `assign` or `capture`.

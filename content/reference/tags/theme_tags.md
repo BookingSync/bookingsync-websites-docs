@@ -28,65 +28,60 @@ Allows you to leave un-rendered code inside a Liquid template. Any text within t
   Best for me is BookingSync.
 ~~~
 
+## render
+
+Insert the rendered content of another template within the current template.
+
+~~~ liquid
+{% render "template-name" %}
+~~~
+
+Note that you don’t need to write the file’s `.liquid` extension.
+
+The code within the rendered template does **not** automatically have access to the variables assigned using [variable tags](/reference/tags/variable_tags/) within the parent template. Similarly, variables assigned within the rendered template cannot be accessed by code in any other template.
+
+## render (parameters)
+
+Variables assigned using [variable tags](/reference/tags/variable_tags/) can be passed to a template by listing them as parameters on the `render` tag.
+
+~~~ liquid
+{% assign my_variable = "apples" %}
+{% render "name", my_variable: my_variable, my_other_variable: "oranges" %}
+~~~
+
+One or more objects can be passed to a template.
+
+~~~ liquid
+{% assign featured_product = all_products["product_handle"] %}
+{% render "product", product: featured_product %}
+~~~
+
+### with
+
+A single object can be passed to a template by using the `with` and optional `as` parameters.
+
+~~~ liquid
+{% assign featured_product = all_products["product_handle"] %}
+{% render "product" with featured_product as product %}
+~~~
+
+In the example above, the product variable in the rendered template will hold the value of `featured_product` from the parent template.
+for
+
+A template can be rendered once for each value of an enumerable object by using the `for` and optional `as` parameters.
+
+~~~ liquid
+{% assign variants = product.variants %}
+{% render "product_variant" for variants as variant %}
+~~~
+
+In the example above, the template will be rendered once for each variant of the product, and the variant variable will hold a different product `variant` object for each iteration.
+
+When using the `for` parameter, the [forloop](/reference/tags/iteration_tags/#for) object is accessible within the rendered template.
+
 ## include
 
-Inserts a **snippet** from the snippets folder of a theme.
-
-~~~ liquid
-  {% include "snippets/locale_switch" %}
-~~~
-
-Note that the *.liquid* extension is omitted in the above code.
-When a snippet is included, the code inside it will have access to the variables within its parent template.
-
-### Including multiple variables in a snippet
-
-There are two ways to include multiple variables in a snippet. You can assign and include them on different lines:
-
-~~~ liquid
-  {% assign page_title = site.name %}
-  {% assign page_description = site.description %}
-  {% include "snippets/locale_switch" %}
-~~~
-
-Or you can consolidate them into one line of code:
-
-~~~ liquid
-  {% include "snippets/locale_switch", page_title: site.name, page_description: site.description %}
-~~~
-
-> ### `include` parameters
->
-> ### *with*
->
-> The `with` parameter assigns a value to a variable inside a snippet that shares the same name as the snippet.
->
-> For example, we can have a snippet named **color.liquid** which contains the following:
->
-> ~~~ liquid
->   color: '{{ color }}'
->   shape: '{{ shape }}'
-> ~~~
->
-> Within **theme.liquid**, we can include the **color.liquid** snippet as follows:
->
-> ~~~ liquid
->   {% assign shape = 'circle' %}
->   {% include 'color' %}
->   {% include 'color' with 'red' %}
->   {% include 'color' with 'blue' %}
->   {% assign shape = 'square' %}
->   {% include 'color' with 'red' %}
-> ~~~
->
-> The output will be:
->
-> ~~~ css
->   color: shape: 'circle'
->   color: 'red' shape: 'circle'
->   color: 'blue' shape: 'circle'
->   color: 'red' shape: 'square'
-> ~~~
+The `include` tag is deprecated; please use [render](/reference/tags/theme_tags/#render) instead.
 
 ## form
 
@@ -94,7 +89,7 @@ Creates an HTML `<form>` element with all the necessary attributes (action, id, 
 
 ## paginate
 
-Splitting rentals, blog articles, and search results across multiple pages is a necessary component of theme design as you are limited to 50 results per page in any [for](/tags/iteration_tags/#for) loop.
+Splitting rentals, blog articles, and search results across multiple pages is a necessary component of theme design as you are limited to 50 results per page in any [for](/reference/tags/iteration_tags/#for) loop.
 
 The `paginate` tag works in conjunction with the `for` tag to split content into numerous pages. It must wrap a `for` tag block that loops through an array, as shown in the example below:
 

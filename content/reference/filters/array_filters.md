@@ -40,7 +40,7 @@ Returns the first element of an array.
 
 <br>
 
-`first` can be used in dot notation, in cases where it needs to be used inside a [tag](/tags/).
+`first` can be used in dot notation, in cases where it needs to be used inside a [tag](/reference/tags/).
 
 ~~~ liquid
   {% if amenity.tags.first == 'swimming pool' %}
@@ -67,7 +67,7 @@ cellar
 
 <br>
 
-`last` can be used in dot notation, in cases where it needs to be used inside a [tag](/tags/).
+`last` can be used in dot notation, in cases where it needs to be used inside a [tag](/reference/tags/).
 
 ~~~ liquid
   {% if amenity.tags.last == 'swimming pool'%}
@@ -146,7 +146,7 @@ Returns the size of a string or an array.
 
 <br>
 
-`size` can be used in dot notation, in cases where it needs to be used inside a [tag](/tags/).
+`size` can be used in dot notation, in cases where it needs to be used inside a [tag](/reference/tags/).
 
 ~~~ liquid
   {% if collections.frontpage.amienities.size > 10 %}

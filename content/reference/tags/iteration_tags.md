@@ -9,7 +9,7 @@ Iteration Tags are used to run a block of code repeatedly.
 
 Repeatedly executes a block of code. For a full list of parameters available within a `for` loop, see [forloop(object)](/).
 
-`for` loops can output a maximum of 50 results per page. In cases where there are more than 50 results, use the [paginate](/tags/theme_tags/#paginate) tag to split them across multiple pages.
+`for` loops can output a maximum of 50 results per page. In cases where there are more than 50 results, use the [paginate](/reference/tags/theme_tags/#paginate) tag to split them across multiple pages.
 
 #### Input
 
@@ -136,7 +136,7 @@ Causes the loop to skip the current iteration when it encounters the `continue` 
 
 Loops through a group of strings and outputs them in the order that they were passed as parameters. Each time `cycle` is called, the next string that was passed as a parameter is output.
 
-`cycle` must be used within a [for](/tags/iteration_tags#for) loop block.
+`cycle` must be used within a [for](/reference/tags/iteration_tags#for) loop block.
 
 #### Input
 
