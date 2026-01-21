@@ -1,31 +1,32 @@
 # Plugins
 
-## Summary
+Plugins in **Website Builder admin** let you add **Liquid**, **HTML**, **CSS**, and **JavaScript** snippets to **Theme v3.12.2+**.
 
-Plugins in **Website Builder admin** let users inject **HTML snippets** into **Theme v3.12.2+**.
+## Availability and requirements
 
-## Availability / requirements
-
-- The **Plugins editor** is available only for websites running **Theme v3.11.2+**.
-- This feature is **not supported** on older theme generations (**v2**, **v1**).
+- The Plugins editor is available for websites running **Theme v3.12.2+**.
+- Plugins are **not supported** on **Theme v2** or **Theme v1**.
 - The available plugins list can **vary by theme version**.
 - If a website is on Theme v3 but not on a recent version, the PM can reach out to the Websites team to **upgrade Theme v3 to the latest version (free)**.
 
-## How it works
+## How plugins work
 
-- Users add a plugin snippet via the new **Plugins** interface in Website Builder admin.
-- Plugin snippets support **Liquid**, **HTML**, **CSS**, and **JavaScript**.
+- You add a plugin snippet via the **Plugins** interface in Website Builder admin.
+- Plugin snippets are saved per website and rendered where the theme exposes plugin slots.
 
 ## Plugin types
 
-- Each theme comes with a set of **built-in (fixed) plugins** that are available for that theme.
-- Users can also create **custom plugins**.
-- **Recommendation:** name custom plugins with the **`custom_`** prefix (for example, `custom_my_plugin`) to reduce the risk of name collisions if a future theme version introduces a plugin with the same name.
-- Custom plugins can be rendered inside other plugins, similar to templates/snippets.
+- Each theme provides a set of **built-in (fixed) plugins**.
+- You can also create **custom plugins**.
+- Custom plugins can be rendered inside other plugins.
+
+**Naming recommendation**
+
+Use the `custom_` prefix for custom plugins (for example, `custom_my_plugin`) to reduce the risk of name collisions if a future theme version introduces a plugin with the same name.
 
 ## Rendering a plugin
 
-Plugins can be rendered using the Liquid tag:
+Use the Liquid tag:
 
 ~~~ liquid
 {% plugin name_of_plugin %}
@@ -33,12 +34,12 @@ Plugins can be rendered using the Liquid tag:
 
 ## Autocomplete
 
-- The plugin name input provides an **autocomplete** with an **exhaustive list of plugins available for the selected theme**.
-- The autocomplete will **always only show plugins that are available for that theme version**.
+- The plugin name input provides an autocomplete with an exhaustive list of plugins available for the selected theme.
+- The autocomplete only shows plugins available for the current theme version.
 
 ## Override behavior (advanced)
 
-It is possible to override a template by placing the Liquid tag below at the **very beginning** of the plugin snippet:
+To override a template, place the following Liquid tag at the **very beginning** of the plugin snippet:
 
 ~~~ liquid
 {% break %}
@@ -46,8 +47,8 @@ It is possible to override a template by placing the Liquid tag below at the **v
 
 **Important notes**
 
-- This override behavior **only affects plugins whose snippet starts with `template_`**.
-- The `{% break %}` tag must be the **first thing in the snippet** (no whitespace or characters before it).
+- This override behavior only affects plugins whose snippet starts with `template_`.
+- The `{% break %}` tag must be the first thing in the snippet (no whitespace or characters before it).
 
 ## Examples
 
@@ -89,37 +90,29 @@ It is possible to override a template by placing the Liquid tag below at the **v
 </div>
 ~~~
 
-### Override a template plugin snippet
+## Built-in plugin slots (Theme v3)
 
-~~~ liquid
-{% break %}
-~~~
+These plugin slots can vary by theme version.
 
-## List of latest Theme v3 plugins
-
-~~~ json
-[
-  "before_content_for_header",
-  "before_head_end",
-  "after_body_start",
-  "before_content_for_layout",
-  "before_body_end",
-  "header",
-  "footer",
-  "template_404",
-  "template_campaign",
-  "template_category",
-  "template_contact",
-  "template_cookies",
-  "template_destination",
-  "template_index",
-  "template_page_content_large",
-  "template_page_content",
-  "template_title",
-  "template_page",
-  "template_password",
-  "template_rental",
-  "template_search",
-  "template_suggested_rentals"
-]
-~~~
+- `before_content_for_header`
+- `before_head_end`
+- `after_body_start`
+- `before_content_for_layout`
+- `before_body_end`
+- `header`
+- `footer`
+- `template_404`
+- `template_campaign`
+- `template_category`
+- `template_contact`
+- `template_cookies`
+- `template_destination`
+- `template_index`
+- `template_page_content_large`
+- `template_page_content`
+- `template_title`
+- `template_page`
+- `template_password`
+- `template_rental`
+- `template_search`
+- `template_suggested_rentals`
