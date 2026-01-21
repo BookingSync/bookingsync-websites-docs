@@ -1,0 +1,29 @@
+
+# Review
+
+Returns review attributes.
+
+#### Example
+
+~~~ liquid
+{% for review in rental.reviews %}
+  <li>
+    {% assign rating = review.rating %}
+    {% render 'snippets/rating' %}
+    {% t 'rentals.show.by' %}
+    <strong>{{ review.name }}</strong>
+  </li>
+{% endfor %}
+~~~
+
+Available attributes:
+
+Name         | Type    | Description
+-------------|---------|------------
+comment      | String  | review's comment
+country_code | String  | reviewer's country_code
+created_at   | Date    | review's date
+id           | Integer | review's id
+name         | String  | reviewer's name
+rating       | Integer | review's rating. Maximum value is 5.
+title        | String  | review's title
