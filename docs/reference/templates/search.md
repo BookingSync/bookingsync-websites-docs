@@ -2,7 +2,13 @@
 
 The `search.liquid` template is used to display the results of a rentals search request.
 
+:::note
+Theme v3+ does not read Liquid parameters on this page to improve cacheability. Use JavaScript to read query parameters and call the Public API v2 search endpoints instead: [/reference/public-api/search](/reference/public-api/search).
+:::
+
 ## Parameters
+
+These parameters are only used by theme v2 and earlier.
 
 Name          | Type            | Description
 --------------|-----------------|------------
