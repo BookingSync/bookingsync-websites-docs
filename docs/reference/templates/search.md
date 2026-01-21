@@ -30,7 +30,7 @@ e.g: `air_conditioning=1`
 
 List of amenities key:
 
-~~~ liquid
+~~~ html
   {% for amenity in SearchForm.amenities %}
     {{ amenity.id }}
   {% endfor %}

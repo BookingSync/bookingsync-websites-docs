@@ -4,7 +4,7 @@ Returns attributes for active locale.
 
 #### Example
 
-~~~ liquid
+~~~ html
 <li><a href="{{ locale.url }}">{{ locale.name }}</a></li>
 ~~~
 

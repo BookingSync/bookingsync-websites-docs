@@ -4,7 +4,7 @@ Returns attributes for Rentals Tags.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% for rentals_tag in search_form.rentals_tags %}
   <option
     {% if rentals_tag.selected %}

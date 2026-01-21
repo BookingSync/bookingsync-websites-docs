@@ -4,7 +4,7 @@ Return attributes for Twitter account.
 
 #### Example
 
-~~~ liquid
+~~~ html
 <a href="https://twitter.com/{{ site.social.twitter.user }}" class="external">
   <cite title="{{ site.name }}">@{{ site.social.twitter.user }}</cite>
 </a>

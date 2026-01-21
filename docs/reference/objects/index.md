@@ -6,7 +6,7 @@ Liquid objects contain attributes to output dynamic content on the page. For exa
 
 To output an object's attribute, wrap the object's name in `{{` and `}}`, as shown below:
 
-~~~ liquid
+~~~ html
 {{ page.title }} <!-- Output: “About Us” -->
 ~~~
 

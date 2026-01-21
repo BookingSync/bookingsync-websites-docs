@@ -9,7 +9,7 @@ Creates a new variable.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% assign my_variable = false %}
   {% if my_variable != true %}
   This statement is valid.
@@ -27,7 +27,7 @@ Use quotations `" "` to save the variable as a string.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% assign foo = "bar" %}
   {{ foo }}
 ~~~
@@ -44,7 +44,7 @@ Captures the string inside of the opening and closing tags and assigns it to a v
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% capture my_variable %}I am being captured.{% endcapture %}
   {{ my_variable }}
 ~~~
@@ -61,7 +61,7 @@ Creates a new number variable, and increases its value by one every time it is c
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% increment variable %}
   {% increment variable %}
   {% increment variable %}
@@ -82,7 +82,7 @@ In the example below, a variable named *"var"* is created through `assign`. The 
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% assign var = 10 %}
   {% increment var %}
   {% increment var %}
@@ -105,7 +105,7 @@ Creates a new number variable, and decreases its value by one every time it is c
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% decrement variable %}
   {% decrement variable %}
   {% decrement variable %}

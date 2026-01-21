@@ -4,7 +4,7 @@ Returns information about active rate
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% for rate in rental.rates %}
   {{ rate.initial_nightly_rate }}
 {% endfor %}

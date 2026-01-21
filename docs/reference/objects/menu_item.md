@@ -4,7 +4,7 @@ Returns attributes of menu items.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% for item in menus.main.items %}
   {% if item.url %}
     <a href="{{ item.url }}">{{ item.title }}</a>

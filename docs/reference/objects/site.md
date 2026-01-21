@@ -4,7 +4,7 @@ Return attributes for website.
 
 #### Example
 
-~~~ liquid
+~~~ html
 <a class="navbar-brand" href="/">
   {{ site.name }}
 </a>

@@ -4,7 +4,7 @@ Returns today and tomorrow dates.
 
 #### Example
 
-~~~ liquid
+~~~ html
 data-min="{{ time.tomorrow | date: '%Y-%m-%d' }}"
 ~~~
 

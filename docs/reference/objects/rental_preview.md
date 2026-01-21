@@ -4,7 +4,7 @@ Return attributes for rental preview.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% if rental.special_offers %}
   <ul class="list-unstyled special_offers">
     {% for special_offer in rental.special_offers %}

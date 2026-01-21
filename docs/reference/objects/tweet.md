@@ -4,7 +4,7 @@ Return attributes for Twitter tweets.
 
 #### Example
 
-~~~ liquid
+~~~ html
 <time datetime="{{ site.social.twitter.last_tweet.created_at | date: '%Y-%m-%dT%M:%sz' }}">
   {{ site.social.twitter.last_tweet.created_at | date: "%B %d, %Y" }}
 </time>

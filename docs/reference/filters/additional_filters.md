@@ -8,7 +8,7 @@ Converts a string, or object, into JSON format.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <script>
     console.log({{ rental.photos | json }});
   </script>
@@ -38,7 +38,7 @@ Adds or replace a parameter in a url. When only `key` is provided, it returns th
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ current_page.url | url_params: 'page', '2' }}
 ~~~
 
@@ -50,7 +50,7 @@ Adds or replace a parameter in a url. When only `key` is provided, it returns th
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'https://example.com/fr/rentals/search?page=2&per_page=20' | url_params: 'page' }}
 ~~~
 
@@ -62,7 +62,7 @@ Adds or replace a parameter in a url. When only `key` is provided, it returns th
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'https://example.com/fr/rentals/search?page=2&per_page=20' | url_params }}
 ~~~
 
@@ -78,7 +78,7 @@ Adds or replaces the `page` query parameter.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'https://example.com/fr/rentals/search' | page: 3 }}
 ~~~
 
@@ -94,7 +94,7 @@ Returns `active` when the request URL matches the given source.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <a class="{{ '/rentals' | active: current_page.url }}">Rentals</a>
 ~~~
 
@@ -104,7 +104,7 @@ Encodes string as an url.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- Rental Headline = "Super Headline" -->
   {{ rental.headline | url_encode }}
 ~~~
@@ -154,7 +154,7 @@ Converts a time/date into another format.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ article.published_at | date: '%a, %b %d, %y' }}
 ~~~
 
@@ -168,7 +168,7 @@ You can also use a named format from the theme locale files.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ booking.start_at | date: format: 'date_and_time' }}
 ~~~
 
@@ -219,7 +219,7 @@ Translates a key using the current locale.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'buttons.book_now' | t }}
 ~~~
 
@@ -229,7 +229,7 @@ Returns the URL for a page by id.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ pages | url_for_page: 12 }}
 ~~~
 
@@ -239,7 +239,7 @@ Filters categories by a search parameter.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% assign filtered = categories | with_search_param: 'destination', destination.id %}
 ~~~
 
@@ -249,7 +249,7 @@ Returns a list of suggested rentals for a destination.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% assign rentals = destination | suggested_rentals: 6 %}
   {% assign rentals = destination | suggested_rentals: 6, '123,456' %}
 ~~~
@@ -260,7 +260,7 @@ Parses and renders Liquid content stored in a string.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% assign snippet = "{{ rental.title }}" %}
   {{ snippet | liquid }}
 ~~~

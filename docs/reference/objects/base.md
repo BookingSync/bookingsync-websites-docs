@@ -4,7 +4,7 @@ Generates urls and paths to default sections of the website.
 
 #### Example
 
-~~~ liquid
+~~~ html
 <a href="{{ site.contact_url }}" class="btn btn-info">{% t 'footer.contact.message' %}</a>
 ~~~
 

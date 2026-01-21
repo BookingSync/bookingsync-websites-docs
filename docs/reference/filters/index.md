@@ -4,7 +4,7 @@ Filters are simple methods that modify the output of numbers, strings, variables
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- rental.title = 'Great Boat' -->
     {{ rental.title | upcase }}
 ~~~
@@ -21,7 +21,7 @@ Some filters require a parameter to be passed.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ rental.title | remove: 'Great' }}
 ~~~
 
@@ -35,7 +35,7 @@ Multiple filters can be used on one output. They are applied from left to right.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- rental.title = 'Great Boat' -->
     {{ rental.title | upcase | remove: 'GREAT'  }}
 ~~~

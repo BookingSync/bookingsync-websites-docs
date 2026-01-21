@@ -4,7 +4,7 @@ Allows to check and show Contact Form errors.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% if contact_request.errors.size > 0 %}
   <div class="alert alert-danger">
     <p>{% t "errors.template.body" %}</p>

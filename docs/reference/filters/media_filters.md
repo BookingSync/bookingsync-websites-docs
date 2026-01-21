@@ -6,7 +6,7 @@ Find a medium from a media collection by id.
 
 #### Input
 
-~~~ liquid
+~~~ html
 {% assign medium = media | find_medium_by_id: 42 %}
 ~~~
 
@@ -16,7 +16,7 @@ Find a medium from a media collection by filename.
 
 #### Input
 
-~~~ liquid
+~~~ html
 {% assign filename = 'home-slider.jpg' %}
 {% assign medium = media | find_medium_by_filename: filename %}
 ~~~
@@ -27,7 +27,7 @@ Return the URL of a medium.
 
 #### Input
 
-~~~ liquid
+~~~ html
 {% assign medium_url = medium | medium_url %}
 ~~~
 
@@ -37,6 +37,6 @@ Return the file object of a medium.
 
 #### Input
 
-~~~ liquid
+~~~ html
 {% assign medium_file = medium | medium_file %}
 ~~~

@@ -4,7 +4,7 @@ Returns attributes for photo from rental photos.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% for photo in rental.photos %}
 ...
   {% if photo.description %}

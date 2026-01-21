@@ -7,7 +7,7 @@ Returns attributes of page.
 For a page with the title `About us`:
 
 ### Input
-~~~ liquid
+~~~ html
 {{ page.handle }}
 ~~~
 

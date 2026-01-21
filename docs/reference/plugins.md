@@ -28,7 +28,7 @@ Use the `custom_` prefix for custom plugins (for example, `custom_my_plugin`) to
 
 Use the Liquid tag:
 
-~~~ liquid
+~~~ html
 {% plugin name_of_plugin %}
 ~~~
 
@@ -41,7 +41,7 @@ Use the Liquid tag:
 
 To override a template, place the following Liquid tag at the **very beginning** of the plugin snippet:
 
-~~~ liquid
+~~~ html
 {% break %}
 ~~~
 

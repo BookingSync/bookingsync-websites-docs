@@ -4,7 +4,7 @@ Allows you to show rental availability map.
 
 #### Example
 
-~~~ liquid
+~~~ html
 <input autocomplete="off" class="date form-control" data-datepicker=""
           id="bs_booknow_start_at" name="start_at"
           placeholder="{% t 'rentals.booknow.checkin.placeholder' %}"

@@ -15,7 +15,7 @@ Allows you to leave un-rendered code inside a Liquid template. Any text within t
 
 #### Input
 
-~~~ liquid
+~~~ html
   Best for me is {% comment %}super{% endcomment %} Smily.
 ~~~
 
@@ -29,7 +29,7 @@ Allows you to leave un-rendered code inside a Liquid template. Any text within t
 
 Insert the rendered content of another template within the current template.
 
-~~~ liquid
+~~~ html
 {% render "template-name" %}
 ~~~
 
@@ -41,14 +41,14 @@ The code within the rendered template does **not** automatically have access to 
 
 Variables assigned using [variable tags](/reference/tags/variable_tags/) can be passed to a template by listing them as parameters on the `render` tag.
 
-~~~ liquid
+~~~ html
 {% assign my_variable = "apples" %}
 {% render "name", my_variable: my_variable, my_other_variable: "oranges" %}
 ~~~
 
 One or more objects can be passed to a template.
 
-~~~ liquid
+~~~ html
 {% assign featured_product = all_products["product_handle"] %}
 {% render "product", product: featured_product %}
 ~~~
@@ -57,7 +57,7 @@ One or more objects can be passed to a template.
 
 A single object can be passed to a template by using the `with` and optional `as` parameters.
 
-~~~ liquid
+~~~ html
 {% assign featured_product = all_products["product_handle"] %}
 {% render "product" with featured_product as product %}
 ~~~
@@ -68,7 +68,7 @@ In the example above, the product variable in the rendered template will hold th
 
 A template can be rendered once for each value of an enumerable object by using the `for` and optional `as` parameters.
 
-~~~ liquid
+~~~ html
 {% assign variants = product.variants %}
 {% render "product_variant" for variants as variant %}
 ~~~
@@ -92,7 +92,7 @@ Splitting rentals, blog articles, and search results across multiple pages is a 
 The `paginate` tag works in conjunction with the `for` tag to split content into numerous pages. It must wrap a `for` tag block that loops through an array, as shown in the example below:
 
 
-~~~ liquid
+~~~ html
   {% paginate collection.rentals by 5 %}
     {% for rental in collection.rentals %}
       <!--show rentals details here -->
@@ -111,12 +111,12 @@ Allows output of Liquid code on a page without being parsed.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% raw %}{{ 5 | plus: 6 }}{% endraw %} is equal to 11.
 ~~~
 
 #### Output
 
-~~~ liquid
+~~~ html
   {{ 5 | plus: 6 }} is equal to 11.
 ~~~

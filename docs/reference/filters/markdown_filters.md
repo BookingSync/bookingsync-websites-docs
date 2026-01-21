@@ -6,7 +6,7 @@ You can use markdown syntax inside rental description.
 
 #### Example
 
-~~~ liquid
+~~~ html
   {{ rental.description | markdown_format }}
 ~~~
 
@@ -19,7 +19,7 @@ allow_link | false | When true, Markdown links are rendered.
 
 #### Examples
 
-~~~ liquid
+~~~ html
   {{ rental.description | markdown_format, downgrade_headers: false }}
   {{ rental.description | markdown_format, allow_link: true }}
 ~~~

@@ -4,7 +4,7 @@ Returns attributes for selected `Guests` number.
 
 #### Example
 
-~~~ liquid
+~~~ html
 <option
   {% if guest.selected %}
     selected="selected"

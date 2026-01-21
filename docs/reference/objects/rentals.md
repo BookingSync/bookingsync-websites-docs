@@ -4,7 +4,7 @@ Returns promoted rentals for current website.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% for rental in rentals.promoted %}
 ...
 {% endfor %}

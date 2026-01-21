@@ -4,7 +4,7 @@ Returns attributes for rental.
 
 #### Example
 
-~~~ liquid
+~~~ html
 <p>{{ rental.rental_type }} {% t 'rentals.show.in' %} {{ rental.destination.name }}, {{ rental.location.country }}</p>
 ~~~
 

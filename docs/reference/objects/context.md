@@ -4,7 +4,7 @@ Allows to check if any exception happened during the request.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% if current_page.controller == 'catch_all' or context.error? %}
 ~~~
 

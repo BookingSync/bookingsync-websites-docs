@@ -4,7 +4,7 @@ Allows to check and show Form errors.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {{ error.messages }}
 ~~~
 

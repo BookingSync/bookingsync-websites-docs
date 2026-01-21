@@ -4,7 +4,7 @@ Return search for rentals.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% for rental in search.rentals %}
   <div class="col-sm-4">
     {% render 'snippets/rental_preview' %}

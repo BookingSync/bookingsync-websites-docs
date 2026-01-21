@@ -9,7 +9,7 @@ Joins the elements of an array with the character passed as the parameter. The r
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ amenity.tags | join: ', ' }}
 ~~~
 
@@ -25,7 +25,7 @@ Returns the first element of an array.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- amenity.tags = 'swimming pool', 'tv', 'boat', 'cellar' -->
     {{ amenity.tags | first }}
 ~~~
@@ -39,7 +39,7 @@ Returns the first element of an array.
 
 `first` can be used in dot notation, in cases where it needs to be used inside a [tag](/reference/tags/).
 
-~~~ liquid
+~~~ html
   {% if amenity.tags.first == 'swimming pool' %}
       This apartment is with a swimming pool!
   {% endif %}
@@ -51,7 +51,7 @@ Gets the last element passed in an array.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- amenity.tags = 'swimming pool', 'tv', 'boat', 'cellar' -->
     {{ amenity.tags | last }}
 ~~~
@@ -65,7 +65,7 @@ cellar
 
 `last` can be used in dot notation, in cases where it needs to be used inside a [tag](/reference/tags/).
 
-~~~ liquid
+~~~ html
   {% if amenity.tags.last == 'swimming pool'%}
       This apartment is with a swimming pool!
   {% endif %}
@@ -76,7 +76,7 @@ Using `last` on a string returns the last character in the string.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- amenity.title = 'swimming pool' -->
   {{ amenity.title | last }}
 ~~~
@@ -93,7 +93,7 @@ Returns the item at the specified index location in an array. Note that array nu
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- amenity.tags = 'swimming pool', 'tv', 'boat', 'cellar' -->
     {{ amenity.tags[2] }}
 ~~~
@@ -110,7 +110,7 @@ Accepts an array element's attribute as a parameter and creates a string out of 
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- collection.title = 'Spring', 'Summer', 'Fall', 'Winter' -->
     {% assign collection_titles = collections | map: 'title' %}
     {{ collection_titles }}
@@ -129,7 +129,7 @@ Returns the size of a string or an array.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ '"Spring", "Summer", "Fall", "Winter"' | size }}
 ~~~
 
@@ -142,7 +142,7 @@ Returns the size of a string or an array.
 
 `size` can be used in dot notation, in cases where it needs to be used inside a [tag](/reference/tags/).
 
-~~~ liquid
+~~~ html
   {% if collections.frontpage.amienities.size > 10 %}
       There are more than 10 amienities in this collection!
   {% endif %}
@@ -152,7 +152,7 @@ Returns the size of a string or an array.
 
 Sorts the elements of an array by a given attribute of an element in the array.
 
-~~~ liquid
+~~~ html
   {% assign amenities = collection.amenities | sort: 'title' %}
   {% for amenity in amenities %}
       <h4>{{ amenity.title }}</h4>
@@ -164,7 +164,7 @@ The order of the sorted array is case-sensitive.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- amenities = 'a', 'b', 'A', 'B' -->
     {% assign amenities = collection.amenities | sort: 'title' %}
     {% for amenity in amenities %}
@@ -184,7 +184,7 @@ Groups an array by a given property and returns an array of objects with `name`,
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- rentals = [{ "bedrooms": 1 }, { "bedrooms": 2 }, { "bedrooms": 1 }] -->
   {% assign grouped = rentals | group_by: 'bedrooms' %}
 ~~~

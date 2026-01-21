@@ -5,7 +5,7 @@ Returns review attributes.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% for review in rental.reviews %}
   <li>
     {% assign rating = review.rating %}

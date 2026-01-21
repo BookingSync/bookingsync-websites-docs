@@ -7,7 +7,7 @@ Creates an asset url under assets_base_url.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'images/large/' | asset_url }}
 ~~~
 
@@ -23,7 +23,7 @@ Generates url for given stylesheet.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'application.css' | stylesheet_url }}
 ~~~
 
@@ -39,7 +39,7 @@ Generates a stylesheet tag for given stylesheet url.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'application.css' | stylesheet_url | stylesheet_tag }}
 ~~~
 
@@ -53,7 +53,7 @@ You can override the `media` attribute by passing it as a parameter.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'print.css' | stylesheet_url | stylesheet_tag: 'print' }}
 ~~~
 
@@ -69,7 +69,7 @@ Generates url for given script.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'application.js' | javascript_url }}
 ~~~
 
@@ -85,7 +85,7 @@ Generates a script tag for given script url.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'application.js' | javascript_url | script_tag }}
 ~~~
 
@@ -99,7 +99,7 @@ You can pass `async` or `defer` as a parameter to add that attribute.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'application.js' | javascript_url | script_tag: 'defer' }}
 ~~~
 
@@ -115,7 +115,7 @@ Generates image url for given image.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'rental.jpg' | image_url }}
 ~~~
 
@@ -131,7 +131,7 @@ Generates an image tag for given image url.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'rental.jpg' | image_url | img_tag: 'Rental photo' }}
 ~~~
 
@@ -147,7 +147,7 @@ Generates an obfuscated mailto link using JavaScript.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'hello@example.com' | encoded_mail_to: 'Contact us' }}
 ~~~
 

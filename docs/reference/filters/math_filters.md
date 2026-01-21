@@ -4,7 +4,7 @@ Math filters allow you to apply mathematical tasks.
 
 Math filters can be linked and, as with any other filters, are applied in order from left to right. In the example below, `minus` is applied first, then `times`, and finally `divided_by`.
 
-~~~ liquid
+~~~ html
 You save {{ rental.compare_at_price | minus: rental.price | times: 100.0 | divided_by: rental.compare_at_price }}%
 ~~~
 
@@ -16,7 +16,7 @@ Divides an output by a number. The output is rounded to the nearest integer.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- rental.price = 200 -->
     {{ rental.price | divided_by: 10 }}
 ~~~
@@ -33,7 +33,7 @@ Subtracts a number from an output.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- rental.price = 200 -->
     {{ rental.price | minus: 15 }}
 ~~~
@@ -50,7 +50,7 @@ Adds a number to an output.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- rental.price = 200 -->
     {{ rental.price | plus: 15 }}
 ~~~
@@ -67,7 +67,7 @@ Multiplies an output by a number.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- rental.price = 200 -->
     {{ rental.price | times: 1.15 }}
 ~~~
@@ -84,7 +84,7 @@ Divides an output by a number and returns the remainder.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 12 | modulo:5 }}
 ~~~
 

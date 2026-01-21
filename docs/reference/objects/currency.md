@@ -4,7 +4,7 @@ Returns attributes for active currency.
 
 #### Example
 
-~~~ liquid
+~~~ html
 <li><a href="{{ currency.url }}">{{ currency.iso_code }}</a></li>
 ~~~
 

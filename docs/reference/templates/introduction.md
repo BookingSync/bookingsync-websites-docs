@@ -39,7 +39,7 @@ Use the `render` tag to load a snippet into your theme.
 
 #### Example:
 
-~~~ liquid
+~~~ html
 {% render 'snippets/home_slider' %}
 ~~~
 

@@ -4,7 +4,7 @@ Returns information about rental type.
 
 #### Example
 
-~~~ liquid
+~~~ html
 <option
   {% if rental_type.selected %}
     selected="selected"

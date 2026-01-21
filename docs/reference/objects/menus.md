@@ -6,7 +6,7 @@ Returns a `Menu` object for each visible menus.
 
 This will return all the menu items from the menu having the handle `main`.
 
-~~~ liquid
+~~~ html
 <ul>
   {% for item in menus.main.items %}
     <li><a href="{{ item.url }}">{{ item.title }}</a></li>

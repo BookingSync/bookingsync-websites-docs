@@ -9,7 +9,7 @@ Import text from Rental Description section formated with HTML tags.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ rental.description | html_format }}
 ~~~
 
@@ -25,7 +25,7 @@ Auto link to source social media.
 
 #### Example
 
-~~~ liquid
+~~~ html
   {{ site.social.twitter.last_tweet.text | autolink }}
 ~~~
 
@@ -35,7 +35,7 @@ Trim whitespaces from input text.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ ' Example String ' | trim_whitespaces }}
 ~~~
 
@@ -51,7 +51,7 @@ Parameterize input text.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'rental 094 page' | parameterize }}
 ~~~
 

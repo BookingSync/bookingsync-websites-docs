@@ -4,7 +4,7 @@ Returns amenities for rental.
 
 #### Example
 
-~~~ liquid
+~~~ html
 <ul class="amenities list-inline fa-ul">
   {% assign amenities = rental.amenities.searchable %}
   {% render 'snippets/amenities' %}

@@ -11,7 +11,7 @@ filename | Original file name.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% assign filename = 'home-slider.jpg' %}
 {% assign medium = media | find_medium_by_filename: filename %}
 {% assign medium_url = medium | medium_url %}
@@ -23,7 +23,7 @@ filename | Original file name.
 
 #### Example with Cloudinary settings and srcset
 
-~~~ liquid
+~~~ html
 {% assign filename = 'home-slider.jpg' %}
 {% assign medium = media | find_medium_by_filename: filename %}
 {% assign base_url = medium | medium_url %}

@@ -41,7 +41,7 @@ https://cloudinary.com/documentation/transformation_reference
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ photo | rental_photo_url | cloudinary_settings: 'w_304,ar_3:2,q_65,c_fill' }}
 ~~~
 
@@ -55,7 +55,7 @@ To remove the image file extension (useful for `<source>` tags), pass `true` as 
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ photo | rental_photo_url | cloudinary_settings: 'w_304,ar_3:2,q_65,c_fill', true }}
 ~~~
 

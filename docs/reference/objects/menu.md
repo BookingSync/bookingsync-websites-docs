@@ -4,7 +4,7 @@ Returns created menu items Array ordered by position.
 
 ## Example
 
-~~~ liquid
+~~~ html
 {{ menu.handle }}
 ~~~
 

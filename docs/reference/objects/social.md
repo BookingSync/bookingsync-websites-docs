@@ -4,7 +4,7 @@ Return attributes for social media inputs.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% if site.social.facebook %}
 <li class="facebook">
   <a class="external" href="https://www.facebook.com/{{ site.social.facebook }}">

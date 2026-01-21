@@ -9,7 +9,7 @@ Executes a block of code only if a certain condition is met.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% if rental.title == 'Apartment 051' %}
       This Apartment comes with a swimming pool.
   {% endif %}
@@ -27,7 +27,7 @@ Adds more conditions within an `if` or `unless` block.
 
 #### Input
 
-~~~ liquid
+~~~ html
 <!-- If customer.name = 'anonymous' -->
 
   {% if customer.name == 'kevin' %}
@@ -51,7 +51,7 @@ Creates a switch statement to compare a variable with different values. `case` i
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% assign handle = 'Apartment 4129' %}
   {% case handle %}
     {% when 'Apartment 4129' %}
@@ -75,7 +75,7 @@ Similar to `if`, but executes a block of code only if a certain condition is **n
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% unless rental.title == 'Apartment 051' %}
       This Apartment is without a swimming pool.
   {% endunless %}
@@ -90,7 +90,7 @@ Similar to `if`, but executes a block of code only if a certain condition is **n
 
 This would be the equivalent of doing the following:
 
-~~~ liquid
+~~~ html
   {% if rental.title != 'Apartment 051' %}
       This Apartment is without a swimming pool.
   {% endif %}

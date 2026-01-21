@@ -9,7 +9,7 @@ Appends characters to a string.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'sales' | append: '.jpg' }}
 ~~~
 
@@ -25,7 +25,7 @@ Capitalizes the first word in a string.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'capitalize me' | capitalize }}
 ~~~
 
@@ -42,7 +42,7 @@ Converts a string into lowercase.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'UPPERCASE' | downcase }}
 ~~~
 
@@ -58,7 +58,7 @@ Escapes a string.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ "<p>test</p>" | escape }}
 ~~~
 
@@ -75,7 +75,7 @@ Inserts a `<br>` linebreak HTML tag in front of each line break in a string.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% capture var %}
   One
   Two
@@ -98,7 +98,7 @@ Prepends characters to a string.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'sale' | prepend: 'Made a great ' }}
 ~~~
 
@@ -114,7 +114,7 @@ Removes all occurrences of a substring from a string.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ "Hello, world. Goodbye, world." | remove: "world" }}
 ~~~
 
@@ -130,7 +130,7 @@ Removes only the first occurrence of a substring from a string.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ "Hello, world. Goodbye, world." | remove_first: "world" }}
 ~~~
 
@@ -146,7 +146,7 @@ Replaces all occurrences of a string with a substring.
 
 #### Input
 
-~~~ liquid
+~~~ html
   <!-- amenity.title = "Awesome Swimming Pool" -->
     {{ amenity.title | replace: 'Awesome', 'Huge' }}
 ~~~
@@ -163,7 +163,7 @@ Replaces the first occurrence of a string with a substring.
 
 ### Input
 
-~~~ liquid
+~~~ html
   <!-- product.title = "Awesome Awesome Swimming Pool" -->
     {{ product.title | replace_first: 'Awesome', 'Huge' }}
 ~~~
@@ -180,7 +180,7 @@ The `split` filter takes on a substring as a parameter. The substring is used as
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% assign words = "Hi, how are you today?" | split: ' ' %}
 
   {% for word in words %}
@@ -204,7 +204,7 @@ Strips all HTML tags from a string.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ "<h1>Hello</h1> World" | strip_html }}
 ~~~
 
@@ -218,7 +218,7 @@ Strips all HTML tags from a string.
 
 Removes any line breaks/newlines from a string.
 
-~~~ liquid
+~~~ html
   {{ rental.description | strip_newlines }}
 ~~~
 
@@ -228,7 +228,7 @@ Truncates a string down to **'x'** characters, where **x** is the number passed 
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ "The cat came back the very next day" | truncate: 10 }}
 ~~~
 
@@ -244,7 +244,7 @@ Truncates a string down to **'x'** words, where **x** is the number passed as a 
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ "The cat came back the very next day" | truncatewords: 4 }}
 ~~~
 
@@ -260,7 +260,7 @@ Converts a string into uppercase.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {{ 'i want this to be uppercase' | upcase }}
 ~~~
 

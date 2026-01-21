@@ -4,7 +4,7 @@ Gives you access to all amenities and their attributes.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% for amenity in amenities %}
   {% if amenity.available %}
     <li class="available"><i class="fa-li fa fa-check-circle-o"></i> {{ amenity.name }}</li>

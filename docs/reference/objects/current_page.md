@@ -4,7 +4,7 @@ Returns attributes for current page.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {% if current_page.controller == 'rentals' and current_page.action == 'show' %}
 ~~~
 

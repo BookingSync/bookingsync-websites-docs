@@ -4,7 +4,7 @@ Returns attributes for available locales.
 
 #### Example
 
-~~~ liquid
+~~~ html
 {{ locales.current.name }}
 ~~~
 

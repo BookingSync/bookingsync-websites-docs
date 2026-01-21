@@ -11,7 +11,7 @@ Repeatedly executes a block of code. For a full list of parameters available wit
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% for amenity in collection.amenities %}
     {{ amenity.title }}
   {% endfor %}
@@ -31,7 +31,7 @@ Repeatedly executes a block of code. For a full list of parameters available wit
 > Exits the for loop at a specific index.
 >
 > #### Input
-> ~~~ liquid
+> ~~~ html
 >   <!-- if array = [1,2,3,4,5,6] -->
 >     {% for item in array limit:2 %}
 >       {{ item }}
@@ -50,7 +50,7 @@ Repeatedly executes a block of code. For a full list of parameters available wit
 >
 > #### Input
 >
-> ~~~ liquid
+> ~~~ html
 >   <!-- if array = [1,2,3,4,5,6] -->
 >     {% for item in array offset:2 %}
 >        {{ item }}
@@ -68,7 +68,7 @@ Repeatedly executes a block of code. For a full list of parameters available wit
 > Defines a range of numbers to loop through. The range can be defined by both literal and variable numbers.
 >
 > #### Input
-> ~~~ liquid
+> ~~~ html
 >   {% assign num = 4 %}
 >   {% for i in (1..num) %}
 >     {{ i }}
@@ -92,7 +92,7 @@ Causes the loop to stop iterating when it encounters the `break` tag.
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% for i in (1..5) %}
     {% if i == 4 %}
       {% break %}
@@ -114,7 +114,7 @@ Causes the loop to skip the current iteration when it encounters the `continue` 
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% for i in (1..5) %}
     {% if i == 4 %}
       {% continue %}
@@ -138,7 +138,7 @@ Loops through a group of strings and outputs them in the order that they were pa
 
 #### Input
 
-~~~ liquid
+~~~ html
   {% cycle 'one', 'two', 'three' %}
   {% cycle 'one', 'two', 'three' %}
   {% cycle 'one', 'two', 'three' %}
@@ -168,7 +168,7 @@ Uses for `cycle` include:
 >
 > The example below shows why cycle groups are necessary when there are multiple instances of the cycle block.
 >
-> ~~~ liquid
+> ~~~ html
 >   <ul>
 >   {% for rental in collections.collection-1.rentals %}
 >     <li{% cycle ' style="clear:both;"', '', '', ' class="last"' %}>
@@ -207,7 +207,7 @@ Uses for `cycle` include:
 >
 > To avoid this, cycle groups are used for each cycle block, as shown below.
 >
-> ~~~ liquid
+> ~~~ html
 >
 >   <ul>
 >   {% for rental in collections.collection-1.rentals %}
@@ -252,7 +252,7 @@ Generates an HTML `<table>`. Must be wrapped in an opening `<table>` and closing
 
 #### Input
 
-~~~ liquid
+~~~ html
   <table>
   {% tablerow amenity in collection.amenities %}
     {{ amenity.title }}
@@ -296,7 +296,7 @@ Generates an HTML `<table>`. Must be wrapped in an opening `<table>` and closing
 >
 > #### Input
 >
-> ~~~ liquid
+> ~~~ html
 >   {% tablerow amenity in collection.amenities cols:2 %}
 >     {{ amenity.title }}
 >   {% endtablerow %}
@@ -338,7 +338,7 @@ Generates an HTML `<table>`. Must be wrapped in an opening `<table>` and closing
 >
 > Exits the tablerow after a specific index.
 >
-> ~~~ liquid
+> ~~~ html
 >   {% tablerow amenity in collection.amenities cols:2 limit:3 %}
 >     {{ amenity.title }}
 >   {% endtablerow %}
@@ -348,7 +348,7 @@ Generates an HTML `<table>`. Must be wrapped in an opening `<table>` and closing
 >
 > Starts the tablerow after a specific index.
 >
-> ~~~ liquid
+> ~~~ html
 >   {% tablerow amenity in collection.amenities cols:2 offset:3 %}
 >     {{ amenity.title }}
 >   {% endtablerow %}
@@ -358,7 +358,7 @@ Generates an HTML `<table>`. Must be wrapped in an opening `<table>` and closing
 >
 > Defines a range of numbers to loop through. The range can be defined by both literal and variable numbers.
 >
-> ~~~ liquid
+> ~~~ html
 >   <!--variable number example-->
 >
 >   {% assign num = 4 %}
