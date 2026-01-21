@@ -2,9 +2,13 @@
 
 Return attributes for search form.
 
+:::note
+Search Form is deprecated in themes v3 and above.
+:::
+
 #### Example
 
-~~~ liquid
+~~~ html
 <select class="select optional form-control chosen-select" data-placeholder="{% t 'search.form.destination' %}" id="search_destination" multiple="multiple" name="destination[]" placeholder="{% t 'search.form.destination' %}">
   {% for destination in search_form.destinations %}
     <option
