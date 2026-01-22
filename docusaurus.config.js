@@ -23,7 +23,7 @@ const config = {
   favicon: 'img/smily-icon.png',
 
   // Set the production url of your site here
-  url: 'https://website.docs.bookingsync.com',
+  url: 'https://website.docs.smily.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -68,7 +68,7 @@ const config = {
           sidebarPath: './sidebars.js',
           path: 'docs',
           routeBasePath: '/',
-          editUrl: 'https://github.com/BookingSync/bookingsync-websites-docs/edit/main/docs/',
+          editUrl: 'https://github.com/BookingSync/bookingsync-websites-docs/edit/master/docs/',
         },
         blog: false, // Disable the blog feature
         theme: {

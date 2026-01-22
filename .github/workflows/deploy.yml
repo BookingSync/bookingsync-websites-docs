@@ -37,7 +37,7 @@ jobs:
         run: pnpm build
 
       - name: Create CNAME file
-        run: echo "website.docs.bookingsync.com" > build/CNAME
+        run: echo "website.docs.smily.com" > build/CNAME
 
       - name: Create .nojekyll file
         run: touch build/.nojekyll
@@ -66,4 +66,4 @@ jobs:
         if: success()
         run: |
           echo "::notice::🚀 Docusaurus site has been successfully deployed to GitHub Pages!"
-          echo "View your site at https://website.docs.bookingsync.com"
+          echo "View your site at https://website.docs.smily.com"
