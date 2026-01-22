@@ -7,7 +7,7 @@ Allows you to show rental availability map.
 ~~~ html
 <input autocomplete="off" class="date form-control" data-datepicker=""
           id="bs_booknow_start_at" name="start_at"
-          placeholder="{% t 'rentals.booknow.checkin.placeholder' %}"
+          placeholder="{{ 'rentals.booknow.checkin.placeholder' | t }}"
           data-min="{{ time.today | date: '%Y-%m-%d' }}"
           data-availability-map="{{ rental.availability.map }}"
           data-tentatives-as-available="{{ site.tentatives_as_available }}"
