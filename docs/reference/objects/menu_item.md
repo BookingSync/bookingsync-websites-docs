@@ -1,0 +1,19 @@
+# Menu Item
+
+Returns attributes of menu items.
+
+#### Example
+
+~~~ html
+{% for item in menus.main.items %}
+  {% if item.url %}
+    <a href="{{ item.url }}">{{ item.title }}</a>
+~~~
+
+Available attributes:
+
+* kind
+* reference
+* submenu
+* title
+* url

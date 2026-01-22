@@ -1,0 +1,199 @@
+# Array Filters
+
+Array filters are used to modify the output of arrays.
+
+
+## join
+
+Joins the elements of an array with the character passed as the parameter. The result is a single string.
+
+#### Input
+
+~~~ html
+  {{ amenity.tags | join: ', ' }}
+~~~
+
+#### Output
+
+~~~
+tag1, tag2, tag3
+~~~
+
+## first
+
+Returns the first element of an array.
+
+#### Input
+
+~~~ html
+  <!-- amenity.tags = 'swimming pool', 'tv', 'boat', 'cellar' -->
+    {{ amenity.tags | first }}
+~~~
+
+#### Output
+
+~~~
+  swimming pool
+~~~
+
+
+`first` can be used in dot notation, in cases where it needs to be used inside a [tag](/reference/tags/).
+
+~~~ html
+  {% if amenity.tags.first == 'swimming pool' %}
+      This apartment is with a swimming pool!
+  {% endif %}
+~~~
+
+## last
+
+Gets the last element passed in an array.
+
+#### Input
+
+~~~ html
+  <!-- amenity.tags = 'swimming pool', 'tv', 'boat', 'cellar' -->
+    {{ amenity.tags | last }}
+~~~
+
+#### Output
+
+~~~
+cellar
+~~~
+
+
+`last` can be used in dot notation, in cases where it needs to be used inside a [tag](/reference/tags/).
+
+~~~ html
+  {% if amenity.tags.last == 'swimming pool'%}
+      This apartment is with a swimming pool!
+  {% endif %}
+~~~
+
+
+Using `last` on a string returns the last character in the string.
+
+#### Input
+
+~~~ html
+  <!-- amenity.title = 'swimming pool' -->
+  {{ amenity.title | last }}
+~~~
+
+#### Output
+
+~~~
+  l
+~~~
+
+## index
+
+Returns the item at the specified index location in an array. Note that array numbering starts from zero, so the first item in an array is referenced with `[0]`.
+
+#### Input
+
+~~~ html
+  <!-- amenity.tags = 'swimming pool', 'tv', 'boat', 'cellar' -->
+    {{ amenity.tags[2] }}
+~~~
+
+#### Output
+
+~~~
+  boat
+~~~
+
+## map
+
+Accepts an array element's attribute as a parameter and creates a string out of each array element's value.
+
+#### Input
+
+~~~ html
+  <!-- collection.title = 'Spring', 'Summer', 'Fall', 'Winter' -->
+    {% assign collection_titles = collections | map: 'title' %}
+    {{ collection_titles }}
+~~~
+
+#### Output
+
+~~~
+  SpringSummerFallWinter
+~~~
+
+
+## size
+
+Returns the size of a string or an array.
+
+#### Input
+
+~~~ html
+  {{ '"Spring", "Summer", "Fall", "Winter"' | size }}
+~~~
+
+#### Output
+
+~~~
+  4
+~~~
+
+
+`size` can be used in dot notation, in cases where it needs to be used inside a [tag](/reference/tags/).
+
+~~~ html
+  {% if collections.frontpage.amienities.size > 10 %}
+      There are more than 10 amienities in this collection!
+  {% endif %}
+~~~
+
+## sort
+
+Sorts the elements of an array by a given attribute of an element in the array.
+
+~~~ html
+  {% assign amenities = collection.amenities | sort: 'title' %}
+  {% for amenity in amenities %}
+      <h4>{{ amenity.title }}</h4>
+  {% endfor %}
+~~~
+
+
+The order of the sorted array is case-sensitive.
+
+#### Input
+
+~~~ html
+  <!-- amenities = 'a', 'b', 'A', 'B' -->
+    {% assign amenities = collection.amenities | sort: 'title' %}
+    {% for amenity in amenities %}
+       {{ amenity.title }}
+    {% endfor %}
+~~~
+
+#### Output
+
+~~~
+  A B a b
+~~~
+
+## group_by
+
+Groups an array by a given property and returns an array of objects with `name`, `items`, and `size`.
+
+#### Input
+
+~~~ html
+  <!-- rentals = [{ "bedrooms": 1 }, { "bedrooms": 2 }, { "bedrooms": 1 }] -->
+  {% assign grouped = rentals | group_by: 'bedrooms' %}
+~~~
+
+#### Output
+
+~~~
+  [
+    { "name": "1", "items": [...], "size": 2 },
+    { "name": "2", "items": [...], "size": 1 }
+  ]
+~~~
