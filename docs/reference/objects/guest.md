@@ -10,7 +10,7 @@ Returns attributes for selected `Guests` number.
     selected="selected"
   {% endif %}
   value="{{ guest.count }}">
-  {{guest.count}}+ {% t 'search.form.guest' %}
+  {{ guest.count }}+ {{ 'search.form.guest' | t }}
 </option>
 ~~~
 

@@ -10,7 +10,7 @@ Returns review attributes.
   <li>
     {% assign rating = review.rating %}
     {% render 'snippets/rating' %}
-    {% t 'rentals.show.by' %}
+    {{ 'rentals.show.by' | t }}
     <strong>{{ review.name }}</strong>
   </li>
 {% endfor %}

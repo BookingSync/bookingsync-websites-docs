@@ -9,7 +9,7 @@ Search Form is deprecated in themes v3 and above.
 #### Example
 
 ~~~ html
-<select class="select optional form-control chosen-select" data-placeholder="{% t 'search.form.destination' %}" id="search_destination" multiple="multiple" name="destination[]" placeholder="{% t 'search.form.destination' %}">
+<select class="select optional form-control chosen-select" data-placeholder="{{ 'search.form.destination' | t }}" id="search_destination" multiple="multiple" name="destination[]" placeholder="{{ 'search.form.destination' | t }}">
   {% for destination in search_form.destinations %}
     <option
       {% if destination.selected %}
