@@ -84,7 +84,6 @@ const config = {
       // Replace with your project's social card
       image: 'img/smily-logo.svg',
       navbar: {
-        title: 'Smily',
         logo: {
           alt: 'Smily logo',
           src: 'img/smily-logo.svg',
@@ -120,7 +119,7 @@ const config = {
               },
               {
                 label: 'Smily API Docs',
-                href: 'https://developers.bookingsync.com/smily-api-docs',
+                href: 'https://developers.bookingsync.com/reference',
               },
             ],
           },

@@ -67,6 +67,6 @@ This repository uses GitHub Actions to build and deploy the Docusaurus site to G
 
 ## Related Resources
 
-- [Smily API Documentation](https://developers.bookingsync.com/smily-api-docs)
+- [Smily API Documentation](https://developers.bookingsync.com/reference)
 - [Smily Engineering Blog](https://www.smily.com/engineering)
 - [Smily.com](https://smily.com)
