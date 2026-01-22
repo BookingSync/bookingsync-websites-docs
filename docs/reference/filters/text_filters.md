@@ -61,3 +61,14 @@ Parameterize input text.
 ~~~
   rental-094-page
 ~~~
+
+## liquid
+
+Parses and renders Liquid content stored in a string.
+
+#### Input
+
+~~~ html
+  {% assign snippet = "{{ rental.title }}" %}
+  {{ snippet | liquid }}
+~~~

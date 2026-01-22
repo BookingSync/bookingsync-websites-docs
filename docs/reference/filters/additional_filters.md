@@ -32,88 +32,6 @@ Converts a string, or object, into JSON format.
   ]
 ~~~
 
-## url_params
-
-Adds or replace a parameter in a url. When only `key` is provided, it returns the parameter value. When no key is provided, it returns all parameters as a hash.
-
-#### Input
-
-~~~ html
-  {{ current_page.url | url_params: 'page', '2' }}
-~~~
-
-#### Output
-
-~~~
-  example.com/fr/rentals/search?page=2
-~~~
-
-#### Input
-
-~~~ html
-  {{ 'https://example.com/fr/rentals/search?page=2&per_page=20' | url_params: 'page' }}
-~~~
-
-#### Output
-
-~~~
-  2
-~~~
-
-#### Input
-
-~~~ html
-  {{ 'https://example.com/fr/rentals/search?page=2&per_page=20' | url_params }}
-~~~
-
-#### Output
-
-~~~
-  { "page": "2", "per_page": "20" }
-~~~
-
-## page
-
-Adds or replaces the `page` query parameter.
-
-#### Input
-
-~~~ html
-  {{ 'https://example.com/fr/rentals/search' | page: 3 }}
-~~~
-
-#### Output
-
-~~~
-  https://example.com/fr/rentals/search?page=3
-~~~
-
-## active
-
-Returns `active` when the request URL matches the given source.
-
-#### Input
-
-~~~ html
-  <a class="{{ '/rentals' | active: current_page.url }}">Rentals</a>
-~~~
-
-## url_encode
-
-Encodes string as an url.
-
-#### Input
-
-~~~ html
-  <!-- Rental Headline = "Super Headline" -->
-  {{ rental.headline | url_encode }}
-~~~
-
-#### Output
-
-~~~
-  Super%20Headline
-~~~
 
 ## convert_stars
 
@@ -213,16 +131,6 @@ Parameter | Description | Output
 %Y | Year with a century. | 2014
 %Z | Time zone name. | EDT
 
-## t
-
-Translates a key using the current locale.
-
-#### Input
-
-~~~ html
-  {{ 'buttons.book_now' | t }}
-~~~
-
 ## url_for_page
 
 Returns the URL for a page by id.
@@ -252,15 +160,4 @@ Returns a list of suggested rentals for a destination.
 ~~~ html
   {% assign rentals = destination | suggested_rentals: 6 %}
   {% assign rentals = destination | suggested_rentals: 6, '123,456' %}
-~~~
-
-## liquid
-
-Parses and renders Liquid content stored in a string.
-
-#### Input
-
-~~~ html
-  {% assign snippet = "{{ rental.title }}" %}
-  {{ snippet | liquid }}
 ~~~
