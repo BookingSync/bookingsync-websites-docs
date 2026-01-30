@@ -39,7 +39,7 @@ Use the Liquid tag:
 
 ## Override behavior (advanced)
 
-To override a template, place the following Liquid tag at the **very beginning** of the plugin snippet:
+To override a template, place the following Liquid tag at the **very end** of the plugin snippet:
 
 ~~~ html
 {% break %}
@@ -48,7 +48,7 @@ To override a template, place the following Liquid tag at the **very beginning**
 **Important notes**
 
 - This override behavior only affects plugins whose snippet starts with `template_`.
-- The `{% break %}` tag must be the first thing in the snippet (no whitespace or characters before it).
+- The `{% break %}` tag must be the last thing in the snippet (no whitespace or characters after it).
 
 ## Examples
 
